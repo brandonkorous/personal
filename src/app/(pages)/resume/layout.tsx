@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     },
 }
 
-export const ResumeLayout = ({ children }: {children: React.ReactNode}) => {
+const ResumeLayout = ({ children }: {children: React.ReactNode}) => {
     return (
         <>
             <script
