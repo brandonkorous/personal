@@ -3,21 +3,16 @@ import { notFound } from "next/navigation"
 import { getBlogPostBySlug, getRelatedBlogPosts } from "./api"
 import Article from "./components/article"
 
-interface BlogPostPageProps {
-    params: {
-        slug: string
-    }
-}
-
 // Generate metadata for the page
-export const generateMetadata = async ({ params }: BlogPostPageProps): Promise<Metadata> => {
-    const post = await getBlogPostBySlug(params.slug)
+export const generateMetadata = async ({ params }: {params: Promise<{slug: string}>}): Promise<Metadata> => {
+    const { slug } = await params;
+    const post = await getBlogPostBySlug(slug)
 
     if (!post) {
         return {
             title: "Post Not Found",
             description: "The requested blog post could not be found.",
-        }
+        };
     }
 
     return {
@@ -64,8 +59,9 @@ export const generateStaticParams = async () => {
 export const dynamic = "force-dynamic"
 export const revalidate = 0
 
-export const BlogPostPage = async ({ params }: BlogPostPageProps) => {
-    const post = await getBlogPostBySlug(params.slug);
+const BlogPostPage = async ({ params }: {params: Promise<{slug: string}>}) => {
+    const { slug } = await params;
+    const post = await getBlogPostBySlug(slug);
 
     if (!post) {
         console.log(post);
