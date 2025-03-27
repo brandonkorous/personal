@@ -3,7 +3,7 @@ import Logo from "./logo";
 import { FOOTER_LINKS, FOOTER_LINKS_LEGAL } from "@/data/site";
 import { SOCIAL_LINKS } from "@/data/site";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
+import { IconProp, library } from "@fortawesome/fontawesome-svg-core";
 import { all } from "@awesome.me/kit-654a0ecbfd/icons";
 
 library.add(...all);
@@ -36,7 +36,7 @@ const Footer = () => {
                         <div className="mt-4 flex space-x-4">
                             {SOCIAL_LINKS.map((link: LinkIconProp) => (
                                 <a key={link.href} href={link.href} aria-label={link.title} target="_blank" rel="noopener noreferrer" className="hover:text-primary" >
-                                    <FontAwesomeIcon icon={link.icon} size="lg"/>
+                                    <FontAwesomeIcon icon={link.icon as IconProp} size="lg"/>
                                 </a>
                             ))}
                         </div>

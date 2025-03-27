@@ -1,6 +1,8 @@
 import Image from "next/image";
+import { Author } from "../../types";
 
-const AuthorCard = ({ author }) => {
+
+const AuthorCard = ({ author }: { author: Author }) => {
     return (
         <div className="card card-border p-6">
             <div className="card-content">

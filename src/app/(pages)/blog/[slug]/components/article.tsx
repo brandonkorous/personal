@@ -4,71 +4,16 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { formatDate } from "@/lib/utils";
-import { useActionState } from "react";
-import { useFormStatus } from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faCalendar, faClock, faTag } from "@awesome.me/kit-654a0ecbfd/icons/classic/solid";
+import { faCalendar, faClock, faTag } from "@awesome.me/kit-654a0ecbfd/icons/classic/solid";
 import AuthorCard from "./aurthor-card";
 import ShareCard from "./share-card";
 import ArticleBlurbCard from "./article-blurb-card";
-
-// Types for the blog article data
-export interface Author {
-    name: string
-    role: string
-    image?: string
-    bio?: string
-    initials?: string
-}
-
-export interface Comment {
-    id: string
-    author: {
-        name: string
-        image?: string
-    }
-    content: string
-    date: string
-    replies?: Comment[]
-}
-
-export interface RelatedPost {
-    title: string
-    excerpt: string
-    category: string
-    date: string
-    image: string
-    slug: string
-}
-
-export interface BlogArticleProps {
-    article: {
-        title: string
-        excerpt: string
-        content: string
-        date: string
-        readTime?: string
-        category?: string
-        slug: string
-        image: string
-        tags?: string[]
-        author: Author
-    }
-    comments?: Comment[]
-    relatedPosts?: RelatedPost[]
-    onShare?: () => void
-    onBookmark?: () => void
-    slug: string
-}
-
+import { ArticleBlurb, BlogArticleProps } from "../../types";
 
 export const Article = ({
     article,
-    comments = [],
     relatedPosts = [],
-    onShare,
-    onBookmark,
-    slug,
 }: BlogArticleProps) => {
     return (
         <main className="flex-1">
@@ -172,7 +117,7 @@ export const Article = ({
 
                         <div className="grid md:grid-cols-3 gap-8">
                             {relatedPosts.map((post, index) => (
-                                <ArticleBlurbCard key={index} article={post} />
+                                <ArticleBlurbCard key={index} article={post as ArticleBlurb} />
                             ))}
                         </div>
                     </div>

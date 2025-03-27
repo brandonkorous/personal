@@ -3,9 +3,9 @@ import { faArrowRight, faEnvelope, faCalendar, faThoughtBubble } from "@awesome.
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { TIME_LINE_ITEMS } from "@/data/about";
 import Link from "next/link";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 const AboutPage = () => {
-    const colors = ["bg-primary", "bg-accent", "border-info", "bg-secondary", "bg-success", "bg-warning", "bg-danger", "border-primary", "border-accent", "border-info", "border-secondary", "border-success", "border-warning", "border-danger", "text-warning", "text-danger", "text-success", "text-info", "text-accent", "text-primary", "text-secondary", "bg-primary/10", "bg-accent/10", "bg-info/10", "bg-secondary/10", "bg-success/10", "bg-warning/10", "bg-danger/10", "border-primary/10", "border-accent/10", "border-info/10", "border-secondary/10", "border-success/10", "border-warning/10", "border-danger/10", "text-warning/10", "text-danger/10", "text-success/10", "text-info/10", "text-accent/10", "text-primary/10", "text-secondary/10"];
     return (
         <>
             <Hero topLeftBlobColor="bg-secondary/20" bottomRightBlobColor="bg-primary/20" className="">
@@ -61,7 +61,7 @@ const AboutPage = () => {
                         <li key={index} className="mb-0">
                             {index > 0 && <hr className={`bg-${item.color}`} />}
                             <div className={`timeline-middle border-${item.color} border-4 bg-white h-10 w-10 rounded-full items-center justify-center flex`}>
-                                <FontAwesomeIcon icon={item.icon} className={`text-${item.color}`} size="sm" fixedWidth />
+                                <FontAwesomeIcon icon={item.icon as IconProp} className={`text-${item.color}`} size="sm" fixedWidth />
                             </div>
                             <div className={`${index % 2 === 0 ? "timeline-start" : "timeline-end"} timeline-box text-2xl border-${item.color} border-4 shadow-lg`}>
                                 <div className="">

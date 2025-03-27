@@ -1,6 +1,6 @@
 "use client"
 
-import type { ProjectIntakeFormData } from "./project-intake-wizard";
+import { ProjectIntakeFormData } from "../data";
 
 interface BasicInfoStepProps {
     formData: ProjectIntakeFormData

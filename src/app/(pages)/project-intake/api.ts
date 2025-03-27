@@ -1,60 +1,22 @@
 'use server';
 import { Resend } from "resend";
-import { ProjectIntakeFormData } from "./data";
+import { BUDGET_OPTIONS, PROJECT_TYPE_OPTIONS, ProjectIntakeFormData, TIMELINE_OPTIONS } from "./data";
 
 const resend = new Resend(process.env.RESEND_API_KEY || "");
 
 export const submitProjectIntake = async (data: ProjectIntakeFormData) => {
     try {
+    const formatProjectType = () => {
+        return PROJECT_TYPE_OPTIONS.find(opt => opt === data.projectType)?.value;
+    }
 
-        const formatProjectType = () => {
-            switch (data.projectType) {
-                case "tech-expertise":
-                    return "Tech Expertise";
-                case "innovation-modernization":
-                    return "Innovation & Modernization";
-                case "automation":
-                    return "Automation";
-                case "other":
-                    return `Other - ${data.projectTypeOther}`;
-                default:
-                    return "Not Specified";
-            }
-        }
+    const formatTimeline = () => {
+        return TIMELINE_OPTIONS.find(opt => opt === data.timeline)?.value;
+    }
 
-        const formatTimeLine = () => {
-            switch (data.timeline) {
-                case "asap":
-                    return "As soon as possible";
-                case "1-3-months":
-                    return "1-3 months";
-                case "3-6-months":
-                    return "3-6 months";
-                case "6-plus-months":
-                    return "6+ months";
-                case "not-sure":
-                    return "Not sure yet";
-                default:
-                    return "Not Specified";
-            }
-        }
-
-        const formatBudget = () => {
-            switch (data.budget) {
-                case "under-10k":
-                    return "Under $10,000";
-                case "10-50k":
-                    return "$10,000 - $50,000";
-                case "50-100k":
-                    return "$50,000 - $100,000";
-                case "100-500k":
-                    return "$100,000 - $500,000";
-                case "500k-plus":
-                    return "$500,000+";
-                default:
-                    return "Not Specified";
-            }
-        }
+    const formatBudget = () => {
+        return BUDGET_OPTIONS.find(opt => opt === data.budget)?.value;
+    }
 
         const htmlContent = `
                 <h1>New Project Intake Submission</h1>
@@ -73,7 +35,7 @@ export const submitProjectIntake = async (data: ProjectIntakeFormData) => {
                 <h2>Project Information</h2>
                 <ul>
                     <li><strong>Project Type:</strong> ${formatProjectType()}</li>
-                    <li><strong>Timeline:</strong> ${formatTimeLine()}</li>
+                    <li><strong>Timeline:</strong> ${formatTimeline()}</li>
                     <li><strong>Budget Range:</strong> ${formatBudget()}</li>
                 </ul>
                 
@@ -112,7 +74,7 @@ export const submitProjectIntake = async (data: ProjectIntakeFormData) => {
 
                     Project Information:
                     Project Type: ${formatProjectType()}
-                    Timeline: ${formatTimeLine()}
+                    Timeline: ${formatTimeline()}
                     Budget Range: ${formatBudget()}
 
                     Project Description:
@@ -138,7 +100,7 @@ export const submitProjectIntake = async (data: ProjectIntakeFormData) => {
                     `;
 
         if (process.env.RESEND_API_KEY) {
-            const { result, error } = await resend.emails.send({
+            const { error } = await resend.emails.send({
                 from: process.env.RESEND_EMAIL_PROJECT_FROM as string,
                 to: [process.env.RESEND_EMAIL_TO as string],
                 subject: `New Project Intake Submission from ${data.firstName} ${data.lastName} - ${formatProjectType()}`,
@@ -164,7 +126,7 @@ export const submitProjectIntake = async (data: ProjectIntakeFormData) => {
         }
 
         if (process.env.RESEND_API_KEY) {
-            const { result, error } = await resend.emails.send({
+            const { error } = await resend.emails.send({
                 from: process.env.RESEND_EMAIL_FROM as string,
                 to: [data.email],
                 subject: "Thank you for your project inquery",

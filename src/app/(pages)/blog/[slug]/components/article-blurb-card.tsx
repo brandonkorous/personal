@@ -3,8 +3,9 @@ import Link from "next/link";
 import { formatDate } from "@/lib/utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faCalendar, faTag } from "@awesome.me/kit-654a0ecbfd/icons/classic/solid";
+import { ArticleBlurb } from "../../types";
 
-export const ArticleBlurbCard = ({ article }) => {
+export const ArticleBlurbCard = ({ article }: { article: ArticleBlurb }) => {
     return (
         <article
             className="card shadow-sm"

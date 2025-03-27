@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { ProjectIntakeFormData } from "./project-intake-wizard"
 import { faCode, faLightbulb, faMicrochip, faThoughtBubble } from "@awesome.me/kit-654a0ecbfd/icons/classic/solid"
+import { PROJECT_TYPE_OPTIONS, ProjectIntakeFormData } from "../data";
 
 interface ProjectTypeStepProps {
     formData: ProjectIntakeFormData
@@ -16,7 +16,7 @@ const ProjectTypeStep = ({ formData, updateFormData }: ProjectTypeStepProps) => 
             <div className="space-y-6">
                 <fieldset className="fieldset">
                     <div className="flex items-start space-x-4 border border-neutral/10 p-4 rounded-lg hover:bg-base-400 transition-colors">
-                        <input type="radio" id="tech-expertise" name="projectType" value="tech-expertise" className="radio mt-2 flex-none bg-base-200" checked={formData.projectType === "tech-expertise"} onChange={(e) => updateFormData({ projectType: e.target.value })} />
+                        <input type="radio" id="tech-expertise" name="projectType" value="tech-expertise" className="radio mt-2 flex-none bg-base-200" checked={formData.projectType.value === "tech-expertise"} onChange={(e) => updateFormData({ projectType: PROJECT_TYPE_OPTIONS.find(opt => opt.value === e.target.value) })} />
                         <div className="flex-grow">
                             <div className="flex items-center space-x-2">
                                 <FontAwesomeIcon icon={faCode} className="text-secondary" size="xl" fixedWidth />
@@ -26,7 +26,7 @@ const ProjectTypeStep = ({ formData, updateFormData }: ProjectTypeStepProps) => 
                         </div>
                     </div>
                     <div className="flex items-start space-x-4 border border-neutral/10 p-4 rounded-lg hover:bg-base-400 transition-colors">
-                        <input type="radio" id="innovation-modernization" name="projectType" value="innovation-modernization" className="radio mt-2 flex-none bg-base-200" checked={formData.projectType === "innovation-modernization"} onChange={(e) => updateFormData({ projectType: e.target.value })} />
+                        <input type="radio" id="innovation-modernization" name="projectType" value="innovation-modernization" className="radio mt-2 flex-none bg-base-200" checked={formData.projectType.value === "innovation-modernization"} onChange={(e) => updateFormData({ projectType: PROJECT_TYPE_OPTIONS.find(opt => opt.value === e.target.value) })} />
                         <div className="flex-grow">
                             <div className="flex items-center">
                                 <FontAwesomeIcon icon={faLightbulb} className="text-primary" size="xl" fixedWidth />
@@ -36,7 +36,7 @@ const ProjectTypeStep = ({ formData, updateFormData }: ProjectTypeStepProps) => 
                         </div>
                     </div>
                     <div className="flex items-start space-x-4 border border-neutral/10 p-4 rounded-lg hover:bg-base-400 transition-colors">
-                        <input type="radio" id="automation" name="projectType" value="automation" className="radio mt-2 flex-none bg-base-200" checked={formData.projectType === "automation"} onChange={(e) => updateFormData({ projectType: e.target.value })} />
+                        <input type="radio" id="automation" name="projectType" value="automation" className="radio mt-2 flex-none bg-base-200" checked={formData.projectType.value === "automation"} onChange={(e) => updateFormData({ projectType: PROJECT_TYPE_OPTIONS.find(opt => opt.value === e.target.value) })} />
                         <div className="flex-grow">
                             <div className="flex items-center">
                                 <FontAwesomeIcon icon={faMicrochip} className="text-accent" size="xl" fixedWidth />
@@ -46,7 +46,7 @@ const ProjectTypeStep = ({ formData, updateFormData }: ProjectTypeStepProps) => 
                         </div>
                     </div>
                     <div className="flex items-start space-x-4 border border-neutral/10 p-4 rounded-lg hover:bg-base-400 transition-colors">
-                        <input type="radio" id="other" name="projectType" value="other" className="radio mt-2 flex-none bg-base-200" checked={formData.projectType === "other"} onChange={(e) => updateFormData({ projectType: e.target.value })} />
+                        <input type="radio" id="other" name="projectType" value="other" className="radio mt-2 flex-none bg-base-200" checked={formData.projectType.value === "other"} onChange={(e) => updateFormData({ projectType: PROJECT_TYPE_OPTIONS.find(opt => opt.value === e.target.value) })} />
                         <div className="flex-grow">
                             <div className="flex items-center">
                                 <FontAwesomeIcon icon={faThoughtBubble} className="text-success" size="xl" fixedWidth />

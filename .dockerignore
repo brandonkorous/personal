@@ -5,3 +5,5 @@ Dockerfile
 .gitignore
 .vscode
 .env
+npm-debug.log
+.npmrc

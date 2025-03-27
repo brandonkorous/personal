@@ -1,6 +1,5 @@
 'use client';
 
-import Link from "next/link";
 import { sendMessage } from "../api";
 import { ContactFormData } from "../data";
 

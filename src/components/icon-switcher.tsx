@@ -15,7 +15,7 @@ interface IconSwitcherProps {
     size?: "xs" | "sm" | "lg" | "xl" | "2x" | "3x" | "4x" | "5x" | "6x" | "7x" | "8x" | "9x" | "10x";
 };
 
-const IconSwitcher = ({ icons, interval, className = "", size = "md" }: IconSwitcherProps) => {
+const IconSwitcher = ({ icons, interval, className = "", size = "lg" }: IconSwitcherProps) => {
     const [iconIndex, setIconIndex] = useState(0);
 
     useEffect(() => {

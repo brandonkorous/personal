@@ -8,7 +8,7 @@ import { AdditionalInfoStep } from "./additional-info-step";
 import { SuccessStep } from "./success-step";
 import ReviewStep from "./review-step";
 import { submitProjectIntake } from "../api";
-import { ProjectIntakeFormData } from "../data";
+import { ProjectIntakeFormData, BudgetOption, TimelineOption, ProjectTypeOption } from "../data";
 
 
 
@@ -26,11 +26,11 @@ const ProjectIntakeWizard = () => {
         company: "",
         role: "",
         phone: "",
-        projectType: "",
+        projectType: {} as ProjectTypeOption,
         projectTypeOther: "",
         projectDescription: "",
-        timeline: "",
-        budget: "",
+        timeline: {} as TimelineOption,
+        budget: {} as BudgetOption,
         budgetNotSure: "",
         currentChallenges: "",
         projectGoals: "",
@@ -68,7 +68,7 @@ const ProjectIntakeWizard = () => {
             case 0:
                 return formData.firstName.trim() !== "" && formData.lastName.trim() !== "" && formData.email.trim() !== "" && emailRegex.test(formData.email);
             case 1:
-                return formData.projectType !== "" && (formData.projectType !== "other" || formData.projectTypeOther.trim() !== "");
+                return formData.projectType !== {} as ProjectTypeOption && (formData.projectType.value !== "other" || formData.projectTypeOther.trim() !== "");
             case 2:
                 return formData.projectDescription && formData.timeline && formData.budget;
             case 3:
@@ -79,6 +79,8 @@ const ProjectIntakeWizard = () => {
     });
 
     const handleSubmit = async () => {
+        if(isSubmitting) return;
+
         try {
             setIsSubmitting(true);
             const result = await submitProjectIntake(formData);
