@@ -1,6 +1,13 @@
 # Install dependencies
 FROM node:18-alpine AS deps
 WORKDIR /app
+
+# Inject FontAwesome auth token for NPM
+ARG FONT_AWESOME_NPM_TOKEN
+RUN echo "@awesome.me:registry=https://npm.fontawesome.com/" > .npmrc \
+ && echo "@fortawesome:registry=https://npm.fontawesome.com/" >> .npmrc \
+ && echo "//npm.fontawesome.com/:_authToken=${FONT_AWESOME_NPM_TOKEN}" >> .npmrc
+
 COPY package.json package-lock.json* ./
 RUN npm ci
 
