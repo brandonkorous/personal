@@ -43,9 +43,14 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           cluster-name: ${{ secrets.AKS_CLUSTER }}
           resource-group: ${{ secrets.AZURE_RG }}
+      - name: Render deployment.yaml with secrets
+        run: |
+          envsubst < deployment/deployment.yaml > deployment/deployment.final.yaml
+        env:
+          ACR_NAME: ${{ secrets.ACR_NAME }}
 
       - name: Deploy to AKS
         run: |
-          kubectl apply -f deployment/deployment.yaml
+          kubectl apply -f deployment/deployment.final.yaml
           kubectl apply -f deployment/service.yaml
           kubectl apply -f deployment/ingress.yaml
