@@ -1,9 +1,9 @@
 
 import Link from "next/link";
-import { ProjectIntakeFormData } from "./project-intake-wizard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@awesome.me/kit-654a0ecbfd/icons/classic/solid";
 import { faCalendar } from "@fortawesome/pro-solid-svg-icons";
+import { ProjectIntakeFormData } from "../data";
 
 interface SuccessStepProps {
     formData: ProjectIntakeFormData
@@ -23,7 +23,7 @@ export function SuccessStep({ formData }: SuccessStepProps) {
             </h2>
 
             <p className="mb-6 max-w-lg mx-auto">
-                Your project information has been submitted successfully. I'll review the details and get back to you within 1-2
+                Your project information has been submitted successfully. I&apos;ll review the details and get back to you within 1-2
                 business days to discuss next steps.
             </p>
 

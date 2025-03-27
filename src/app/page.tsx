@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faCode, faEnvelope, faLightbulb, faQuoteLeft, faRobot, faRocket, faStar } from "@awesome.me/kit-654a0ecbfd/icons/classic/solid";
+import { faArrowRight, faCode, faEnvelope, faLightbulb, faRobot, faRocket, faStar } from "@awesome.me/kit-654a0ecbfd/icons/classic/solid";
 import { faStar as faStarSolid } from "@awesome.me/kit-654a0ecbfd/icons/classic/solid";
 import { faStar as faStarThin } from "@awesome.me/kit-654a0ecbfd/icons/classic/thin";
 import Hero from "@/components/hero";
@@ -158,7 +158,7 @@ export default function Home() {
                     <div className="text-center mt-16">
                         <h2 className="font-coiny">Ready to Work Together?</h2>
                         <p className="max-w-2xl mx-auto text-xl">
-                            Let&apos;s create somethign amazing! Whether you need technical solutions, automation, or a fresh new look, I'm here to help.
+                            Let&apos;s create somethign amazing! Whether you need technical solutions, automation, or a fresh new look, I&apos;m here to help.
                         </p>
                     </div>
 

@@ -7,19 +7,15 @@ import Link from 'next/link';
 interface ArticleProps {
     id: number;
     category: string;
-    featured: boolean;
     title: string;
     slug: string;
     excerpt: string;
-    content: string;
     date: string;
-    readTime: string;
     image: string;
     tags: string[];
-    author: string;
 }
 
-const Article = ({ id, category, featured, title, slug, excerpt, content, date, readTime, image, tags, author }: ArticleProps) => {
+const Article = ({ id, category, title, slug, excerpt, date, image, tags }: ArticleProps) => {
     return (
         <article
             key={id}

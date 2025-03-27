@@ -13,7 +13,6 @@ interface HeroProps {
 };
 
 const Hero = ({
-    title,
     children,
     className,
     applyBlobBlur = true,

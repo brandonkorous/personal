@@ -1,6 +1,6 @@
 "use client"
 import { faLinkedin } from "@awesome.me/kit-654a0ecbfd/icons/classic/brands"
-import { faArrowRight, faCalendar, faDownload, faEnvelope, faMessage, faPhone } from "@awesome.me/kit-654a0ecbfd/icons/classic/solid"
+import { faCalendar, faDownload, faEnvelope, faMessage, faPhone } from "@awesome.me/kit-654a0ecbfd/icons/classic/solid"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
 
@@ -493,7 +493,7 @@ export const ResumePage = () => {
                                                 <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
                                                 <span>
                                                     Designed and implemented new .Net MVC applications to replace legacy systems (C++, Delphi,
-                                                    WinForms, XML Web Services), driving the organization's transition to modern technologies
+                                                    WinForms, XML Web Services), driving the organization&apos;s transition to modern technologies
                                                     and improving application maintainability and performance.
                                                 </span>
                                             </li>

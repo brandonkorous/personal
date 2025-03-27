@@ -6,6 +6,7 @@ import { faClock, faEnvelope, faLocationDot, faMessage, faPhone } from "@awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import ContactForm from "./components/form";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 const Contact = () => {
     return (
@@ -110,7 +111,7 @@ const Contact = () => {
                                                 className="btn btn-circle btn-outline btn-secondary hover:bg-primary hover:text-white hover:border-primary"
                                                 aria-label={link.title}
                                             >
-                                                <FontAwesomeIcon icon={link.icon} />
+                                                <FontAwesomeIcon icon={link.icon as IconProp} />
                                             </Link>
                                         ))}
                                     </div>

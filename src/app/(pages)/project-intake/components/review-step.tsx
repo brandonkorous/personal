@@ -1,62 +1,20 @@
-import { ProjectIntakeFormData } from "./project-intake-wizard"
+import { BUDGET_OPTIONS, PROJECT_TYPE_OPTIONS, ProjectIntakeFormData, TIMELINE_OPTIONS } from "../data"
 
 interface ReviewStepProps {
     formData: ProjectIntakeFormData
 }
 
 const ReviewStep = ({ formData }: ReviewStepProps) => {
-    // Helper function to format project type
     const formatProjectType = () => {
-        switch (formData.projectType) {
-            case "tech-expertise":
-                return "Tech Expertise"
-            case "innovation-modernization":
-                return "Innovation & Modernization"
-            case "automation":
-                return "Automation"
-            case "other":
-                return `Other: ${formData.projectTypeOther}`
-            default:
-                return "Not specified"
-        }
+        return PROJECT_TYPE_OPTIONS.find(opt => opt === formData.projectType)?.value;
     }
 
-    // Helper function to format timeline
     const formatTimeline = () => {
-        switch (formData.timeline) {
-            case "asap":
-                return "As soon as possible"
-            case "1-3-months":
-                return "1-3 months"
-            case "3-6-months":
-                return "3-6 months"
-            case "6-plus-months":
-                return "6+ months"
-            case "not-sure":
-                return "Not sure yet"
-            default:
-                return "Not specified"
-        }
+        return TIMELINE_OPTIONS.find(opt => opt === formData.timeline)?.value;
     }
 
-    // Helper function to format budget
     const formatBudget = () => {
-        switch (formData.budget) {
-            case "under-5k":
-                return "Under $5,000"
-            case "5k-10k":
-                return "$5,000 - $10,000"
-            case "10k-25k":
-                return "$10,000 - $25,000"
-            case "25k-50k":
-                return "$25,000 - $50,000"
-            case "50k-plus":
-                return "$50,000+"
-            case "not-sure":
-                return "Not sure yet"
-            default:
-                return "Not specified"
-        }
+        return BUDGET_OPTIONS.find(opt => opt === formData.budget)?.value;
     }
 
     return (

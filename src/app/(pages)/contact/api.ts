@@ -26,7 +26,7 @@ export const sendMessage = async (data: ContactFormData) => {
                     New Message Sent
                     
                     Contact Information:
-                    Name: ${data.firstName} ${data.lastName}
+                    Name: ${data.name}
                     Email: ${data.email}
 
                     Subject:
@@ -38,7 +38,7 @@ export const sendMessage = async (data: ContactFormData) => {
                     `;
 
         if (process.env.RESEND_API_KEY) {
-            const { result, error } = await resend.emails.send({
+            const { error } = await resend.emails.send({
                 from: process.env.RESEND_EMAIL_PROJECT_FROM as string,
                 to: [process.env.RESEND_EMAIL_TO as string],
                 subject: `New Message from ${data.name}`,
@@ -64,7 +64,7 @@ export const sendMessage = async (data: ContactFormData) => {
         }
 
         if (process.env.RESEND_API_KEY) {
-            const { result, error } = await resend.emails.send({
+            const { error } = await resend.emails.send({
                 from: process.env.RESEND_EMAIL_FROM as string,
                 to: [data.email],
                 subject: "Thank you for reaching out",

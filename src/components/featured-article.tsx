@@ -1,25 +1,12 @@
+import { ArticleBlurb } from '@/app/(pages)/blog/types';
 import { formatDate } from '@/lib/utils';
 import { faArrowRight, faCalendarDays, faTag } from '@awesome.me/kit-654a0ecbfd/icons/classic/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import Link from 'next/link';
 
-interface FeaturedArticleProps {
-    id: number;
-    category: string;
-    featured: boolean;
-    title: string;
-    slug: string;
-    excerpt: string;
-    content: string;
-    date: string;
-    readTime: string;
-    image: string;
-    tags: string[];
-    author: string;
-}
 
-const FeaturedArticle = ({ id, category, featured, title, slug, excerpt, content, date, readTime, image, tags, author }: ArticleProps) => {
+const FeaturedArticle = ({ title, slug, excerpt, date, image, tags = [] }: ArticleBlurb) => {
     return (
         <article className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative overflow-hidden rounded-xl">
@@ -39,7 +26,7 @@ const FeaturedArticle = ({ id, category, featured, title, slug, excerpt, content
                     </span>
                     <span className="flex items-center text-neutral gap-2">
                         <FontAwesomeIcon icon={faTag} size="xl" />
-                        {tags.map((tag) => (
+                        {tags.map((tag: string) => (
                             <span key={tag} className="inline-block bg-base-300 text-neutral px-2 py-1 rounded-full text-xs font-medium">
                                 {tag}
                             </span>
