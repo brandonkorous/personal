@@ -21,12 +21,12 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Install kubelogin (for AAD auth)
-      run: |
-        curl -LO https://github.com/Azure/kubelogin/releases/download/v0.0.25/kubelogin-linux-amd64.zip
-        unzip kubelogin-linux-amd64.zip -d kubelogin
-        sudo mv kubelogin/bin/linux_amd64/kubelogin /usr/local/bin
-        kubelogin --version
+      - name: Install kubelogin (for AAD auth)
+        run: |
+            curl -LO https://github.com/Azure/kubelogin/releases/download/v0.0.25/kubelogin-linux-amd64.zip
+            unzip kubelogin-linux-amd64.zip -d kubelogin
+            sudo mv kubelogin/bin/linux_amd64/kubelogin /usr/local/bin
+            kubelogin --version
 
       - name: Set up Docker to use ACR
         run: |
