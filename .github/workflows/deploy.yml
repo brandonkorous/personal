@@ -39,6 +39,6 @@ jobs:
 
       - name: Deploy to AKS
         run: |
-          kubectl apply -f k8s/deployment.yaml
-          kubectl apply -f k8s/service.yaml
-          kubectl apply -f k8s/ingress.yaml
+          kubectl apply -f deployment/deployment.yaml
+          kubectl apply -f deployment/service.yaml
+          kubectl apply -f deployment/ingress.yaml
