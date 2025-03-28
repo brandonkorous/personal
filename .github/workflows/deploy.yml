@@ -56,9 +56,13 @@ jobs:
       - name: Set image version in deployment
         run: |
             kubectl set image deployment/bk-website bk-website=${{ secrets.ACR_NAME }}.azurecr.io/$IMAGE_NAME:$VERSION
+      - name: Debug environment variables
+        run: |
+          echo "IMAGE_TAG=$VERSION"
+          echo "ACR_NAME=${{ secrets.ACR_NAME }}"
       - name: Render deployment.yaml with secrets
         run: |
-          envsubst < deployment/deployment.yaml > deployment/deployment.final.yaml
+          envsubst '${IMAGE_TAG} ${ACR_NAME}' < deployment/deployment.yaml > deployment/deployment.final.yaml
         env:
           IMAGE_TAG: $VERSION
           ACR_NAME: ${{ secrets.ACR_NAME }}
