@@ -43,7 +43,7 @@ jobs:
 
       - name: Docker Build and Tag
         run: |
-            docker build --build-arg FONT_AWESOME_NPM_TOKEN=${{ secrets.FONT_AWESOME_NPM_TOKEN }} -t ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:$VERSION .
+            docker build --no-cache --build-arg FONT_AWESOME_NPM_TOKEN=${{ secrets.FONT_AWESOME_NPM_TOKEN }} -t ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:$VERSION .
             docker tag $ACR_NAME.azurecr.io/$IMAGE_NAME:$VERSION $ACR_NAME.azurecr.io/$IMAGE_NAME:latest
 
       - name: Docker Push
