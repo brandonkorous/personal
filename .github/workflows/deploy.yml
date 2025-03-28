@@ -39,7 +39,7 @@ jobs:
 
       - name: Set up Docker to use ACR
         run: |
-          az acr login --name ${{ secrets.ACR_NAME }} --yes
+          az acr login --name ${{ secrets.ACR_NAME }}
 
       - name: Docker Build and Tag
         run: |
