@@ -53,10 +53,9 @@ jobs:
           cluster-name: ${{ secrets.AKS_CLUSTER }}
           resource-group: ${{ secrets.AZURE_RG }}
 
-
       - name: Set image version in deployment
         run: |
-            kubectl set image deployment/bk-website bk-website=${{ secrets.ACR_NAME }}.azurecr.io/$IMAGE_NAME:latest
+            kubectl set image deployment/bk-website bk-website=${{ secrets.ACR_NAME }}.azurecr.io/$IMAGE_NAME:$VERSION
       - name: Render deployment.yaml with secrets
         run: |
           envsubst < deployment/deployment.yaml > deployment/deployment.final.yaml

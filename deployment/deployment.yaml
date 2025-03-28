@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
         - name: bk-website
-          image: ${ACR_NAME}.azurecr.io/bk-website:latest
+          image: ${ACR_NAME}.azurecr.io/bk-website:${IMAGE_TAG}
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
           resources:
