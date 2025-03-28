@@ -63,7 +63,11 @@ jobs:
         env:
           IMAGE_TAG: $VERSION
           ACR_NAME: ${{ secrets.ACR_NAME }}
-
+          
+      - name: Output rendered deployment.yaml
+        run: |
+            echo "Contents of deployment.final.yaml:"
+            cat deployment/deployment.final.yaml
       - name: Deploy to AKS
         run: |
           kubectl apply -f deployment/deployment.final.yaml
