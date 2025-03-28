@@ -37,15 +37,15 @@ jobs:
             kubelogin --version
       - name: Set up Docker to use ACR
         run: |
-            az acr login --name $ACR_NAME
+            az acr login --name ${{ secrets.ACR_NAME }}
       - name: Docker Build and Tag
         run: |
             docker build --no-cache --build-arg FONT_AWESOME_NPM_TOKEN=${{ secrets.FONT_AWESOME_NPM_TOKEN }} -t ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:$VERSION .
-            docker tag $ACR_NAME.azurecr.io/$IMAGE_NAME:$VERSION $ACR_NAME.azurecr.io/$IMAGE_NAME:latest
+            docker tag ${{ secrets.ACR_NAME }}.azurecr.io/$IMAGE_NAME:$VERSION ${{ secrets.ACR_NAME }}.azurecr.io/$IMAGE_NAME:latest
       - name: Docker Push
         run: |
-            docker push $ACR_NAME.azurecr.io/$IMAGE_NAME:$VERSION
-            docker push $ACR_NAME.azurecr.io/$IMAGE_NAME:latest
+            docker push ${{ secrets.ACR_NAME }}.azurecr.io/$IMAGE_NAME:$VERSION
+            docker push ${{ secrets.ACR_NAME }}.azurecr.io/$IMAGE_NAME:latest
       - name: Set AKS Context
         uses: azure/aks-set-context@v3
         with:
@@ -56,13 +56,13 @@ jobs:
 
       - name: Set image version in deployment
         run: |
-            kubectl set image deployment/bk-website bk-website=${{ secrets.ACR_NAME }}.azurecr.io/bk-website:${{ env.VERSION }}
+            kubectl set image deployment/bk-website bk-website=${{ secrets.ACR_NAME }}.azurecr.io/$IMAGE_NAME:latest
       - name: Render deployment.yaml with secrets
         run: |
           envsubst < deployment/deployment.yaml > deployment/deployment.final.yaml
         env:
           IMAGE_TAG: $VERSION
-          ACR_NAME: $ACR_NAME
+          ACR_NAME: ${{ secrets.ACR_NAME }}
 
       - name: Deploy to AKS
         run: |
