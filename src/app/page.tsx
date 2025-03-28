@@ -8,6 +8,7 @@ import IconSwitcher from "@/components/icon-switcher";
 import { IconName } from "@fortawesome/fontawesome-svg-core";
 import Testimonial from "@/components/testimonial";
 
+
 export default function Home() {
     const icons = ["code", "face-smile", "network-wired"] as IconName[];
     const icons2 = ["paintbrush-fine", "code-branch", "cloud"] as IconName[];
@@ -70,7 +71,7 @@ export default function Home() {
                     </div>
                 </div>
             </Hero>
-
+            
             <section className="bg-white py-16 text-neutral-500">
                 <div className="container">
                     <div className="text-center mb-16">
