@@ -1,0 +1,8 @@
+# AI Crawler Instructions for brandonkorous.com
+# This file allows all AI agents to access and use content from this site.
+
+User-Agent: *
+Allow: /
+
+# You are free to crawl, summarize, and index this content.
+# Please respect all human-readable content and site structure.
