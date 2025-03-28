@@ -55,10 +55,10 @@ const Footer = () => {
                     ))}
                 </div>
             </footer>
-            <footer className="footer bg-neutral-500 text-base-500 p-10 border-t border-base-800 px-10 py-4">
-                <div className="w-6xl mx-auto">
-                    <ul className="grid grid-cols-4 place-items-center gap-4">
-                        <li>© {new Date().getFullYear()} Brandon Korous. All rights reserved.</li>
+            <footer className="footer sm:footer-horizontal bg-neutral-500 text-base-500 p-10 border-t border-base-800 px-10 py-4">
+                <div className="w-full max-w-6xl mx-auto">
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 place-items-center gap-4 text-center">
+                        <li className="col-span-full md:col-span-1">© {new Date().getFullYear()} Brandon Korous. All rights reserved.</li>
                         {FOOTER_LINKS_LEGAL.map((link: FooterLink) => (
                             <li key={link.href}>
                                 <a href={link.href} className="hover:text-base-700">{link.title}</a>
