@@ -7,6 +7,7 @@ on:
 
 env:
   IMAGE_NAME: bk-website
+  ACR_NAME: ${{ secrets.ACR_NAME }}
 
 jobs:
   build-and-deploy:
@@ -14,12 +15,20 @@ jobs:
     environment: ${{ github.ref_name == 'main' && 'production' || 'development' }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Log in to Azure
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Read SemVer from package.json
+        id: semver
+        run: |
+            VERSION=$(jq -r .version package.json)
+            echo "VERSION=$VERSION" >> $GITHUB_ENV
+            echo "🔢 Using version: $VERSION"
+        
 
       - name: Install kubelogin (for AAD auth)
         run: |
@@ -30,12 +39,17 @@ jobs:
 
       - name: Set up Docker to use ACR
         run: |
-          az acr login --name ${{ secrets.ACR_NAME }}
+            az acr login --name $ACR_NAME
 
-      - name: Build and Push Docker Image
+      - name: Docker Build and Tag
         run: |
-          docker build --no-cache -t ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:latest .
-          docker push ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:latest
+            docker build -t $ACR_NAME.azurecr.io/$IMAGE_NAME:$VERSION .
+            docker tag $ACR_NAME.azurecr.io/$IMAGE_NAME:$VERSION $ACR_NAME.azurecr.io/$IMAGE_NAME:latest
+
+      - name: Docker Push
+        run: |
+            docker push $ACR_NAME.azurecr.io/$IMAGE_NAME:$VERSION
+            docker push $ACR_NAME.azurecr.io/$IMAGE_NAME:latest
 
       - name: Set AKS Context
         uses: azure/aks-set-context@v3
@@ -43,11 +57,18 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
           cluster-name: ${{ secrets.AKS_CLUSTER }}
           resource-group: ${{ secrets.AZURE_RG }}
+
+
+      - name: Set image version in deployment
+        run: |
+            kubectl set image deployment/bk-website bk-website=${{ secrets.ACR_NAME }}.azurecr.io/bk-website:${{ env.VERSION }}
+
       - name: Render deployment.yaml with secrets
         run: |
           envsubst < deployment/deployment.yaml > deployment/deployment.final.yaml
         env:
-          ACR_NAME: ${{ secrets.ACR_NAME }}
+          IMAGE_TAG: $VERSION
+          ACR_NAME: $ACR_NAME
 
       - name: Deploy to AKS
         run: |
