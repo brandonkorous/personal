@@ -65,14 +65,15 @@ jobs:
         run: |
           kubectl set image deployment/${{ env.IMAGE_NAME }} ${{ env.IMAGE_NAME }}=${{ secrets.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:latest
 
-      # Optional step — if you use templated manifests, uncomment and add logic
-      # - name: Render deployment.yaml with secrets
-      #   run: |
-      #     envsubst < deployment/deployment.template.yaml > deployment/deployment.final.yaml
+      - name: Render deployment.yaml with secrets
+        run: |
+          envsubst < deployment/deployment.yaml > deployment/deployment.final.yaml
+        env:
+          ACR_NAME: ${{ secrets.ACR_NAME }}
 
       - name: Deploy to AKS
         run: |
-          kubectl apply -f deployment/deployment.yaml
+          kubectl apply -f deployment/deployment.final.yaml
           kubectl apply -f deployment/service.yaml
           kubectl apply -f deployment/ingress.yaml
           kubectl rollout status deployment/${{ env.IMAGE_NAME }}
