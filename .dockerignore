@@ -7,3 +7,8 @@ Dockerfile
 .env
 npm-debug.log
 .npmrc
+.next
+dist
+out
+coverage
+*.log
