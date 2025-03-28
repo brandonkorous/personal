@@ -90,10 +90,10 @@ export default function Home() {
                             <div className="card-title">
                                 <h3>Tech Expertise</h3>
                             </div>
-                            <div className="card-content ">
+                            <p className="card-content ">
                                 Web development, automation, and innovation to help your brand stand out and operate efficiently.
-                            </div>
-                            <div className="card-actions">
+                            </p>
+                            <div className="card-actions text-lg">
                                 <Link href="/services" className="text-primary no-underline hover:underline pt-4">
                                     Learn More <FontAwesomeIcon icon={"arrow-right"} />
                                 </Link>
@@ -108,10 +108,10 @@ export default function Home() {
                             <div className="card-title">
                                 <h3>Innovation & Modernization</h3>
                             </div>
-                            <div className="card-content">
+                            <p className="card-content">
                                 Forward-thinking strategies and solutions that transform outdated systems and processes into modern, efficient operations.
-                            </div>
-                            <div className="card-actions">
+                            </p>
+                            <div className="card-actions text-lg">
                                 <Link href="/services" className="text-secondary no-underline hover:underline pt-4">
                                     Learn More <FontAwesomeIcon icon={"arrow-right"} />
                                 </Link>
@@ -126,10 +126,10 @@ export default function Home() {
                             <div className="card-title">
                                 <h3>Automation</h3>
                             </div>
-                            <div className="card-content">
+                            <p className="card-content">
                                 Intelligent workflow automation solutions that reduce manual tasks, minimize errors, and increase operational efficiency.
-                            </div>
-                            <div className="card-actions">
+                            </p>
+                            <div className="card-actions text-lg">
                                 <Link href="/services" className="text-accent no-underline hover:underline pt-4">
                                     Learn More <FontAwesomeIcon icon={"arrow-right"} />
                                 </Link>
