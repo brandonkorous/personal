@@ -14,7 +14,8 @@ RUN npm ci
 # Build app
 FROM node:18-alpine AS builder
 WORKDIR /app
-COPY --from=deps /app ./
+COPY --from=deps /app ./ 
+COPY src ./src # Explicitly copy the src folder to ensure components are included
 COPY . .
 RUN npm run build
 
