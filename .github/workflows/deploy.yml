@@ -57,7 +57,8 @@ jobs:
       - name: Set AKS Context
         run: |
           echo "${{ secrets.KUBECONFIG_SECRET }}" > kubeconfig
-          export KUBECONFIG=kubeconfig
+          export KUBECONFIG=$(pwd)/kubeconfig
+          kubectl config view # Validate the kubeconfig file
 
       - name: Set image version in deployment
         run: |
