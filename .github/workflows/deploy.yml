@@ -36,7 +36,6 @@ jobs:
             unzip kubelogin-linux-amd64.zip -d kubelogin
             sudo mv kubelogin/bin/linux_amd64/kubelogin /usr/local/bin
             kubelogin --version
-            gm -rf kubelogin*
 
         - name: Set up Docker to use ACR
           run: |
