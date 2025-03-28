@@ -55,11 +55,9 @@ jobs:
           docker push ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:latest
 
       - name: Set AKS Context
-        uses: azure/aks-set-context@v3
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-          cluster-name: ${{ secrets.AKS_CLUSTER }}
-          resource-group: ${{ secrets.AZURE_RG }}
+        run: |
+          echo "${{ secrets.KUBECONFIG_SECRET }}" > kubeconfig
+          export KUBECONFIG=kubeconfig
 
       - name: Set image version in deployment
         run: |
