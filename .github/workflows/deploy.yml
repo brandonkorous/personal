@@ -63,7 +63,7 @@ jobs:
 
       - name: Set image version in deployment
         run: |
-          kubectl set image deployment/${{ env.IMAGE_NAME }} ${{ env.IMAGE_NAME }}=${{ secrets.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ steps.semver.outputs.version }}
+          kubectl set image deployment/${{ env.IMAGE_NAME }} ${{ env.IMAGE_NAME }}=${{ secrets.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:latest
 
       # Optional step — if you use templated manifests, uncomment and add logic
       # - name: Render deployment.yaml with secrets
