@@ -8,6 +8,7 @@ const robots = (): MetadataRoute.Robots =>{
             disallow: '/private/',
         },
         sitemap: 'https://brandonkorous.com/sitemap.xml',
+        //AI-Policy: 'https://brandonkorous.com/ai.txt'
     }
 };
 
