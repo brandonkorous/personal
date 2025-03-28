@@ -25,7 +25,6 @@ jobs:
           id: semver
           run: |
             VERSION=$(jq -r .version package.json)
-            echo "🔢 Using version: $VERSION"
             echo "VERSION=$VERSION" >> $GITHUB_ENV
           env:
             VERSION: $VERSION
@@ -67,7 +66,7 @@ jobs:
           run: |
             envsubst < deployment/deployment.yaml > deployment/deployment.final.yaml
           env:
-            IMAGE_TAG: $VERSION
+            IMAGE_TAG: ${{ env.VERSION }}
             ACR_NAME: ${{ secrets.ACR_NAME }}
             
         - name: Deploy to AKS
