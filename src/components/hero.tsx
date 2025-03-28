@@ -22,7 +22,7 @@ const Hero = ({
     bottomRightBlobColor,
 }: HeroProps) => {
     return (
-        <div className={`hero min-h-180 relative overflow-hidden p-16 ${className}`}>
+        <div className={`hero min-h-180 relative overflow-hidden py-16 ${className}`}>
             {topLeftBlobColor && <div className={`absolute h-64 w-64 rounded-full -top-24 -left-32 ${applyBlobBlur &&  "blur-lg"} ${topLeftBlobColor}`}></div>}
             {topRightBlobColor && <div className={`absolute h-64 w-64 rounded-full -top-32 -right-24 ${applyBlobBlur &&  "blur-lg"} ${topRightBlobColor}`}></div>}
             {bottomLeftBlobColor && <div className={`absolute h-64 w-64 rounded-full -bottom-32 -left-24 ${applyBlobBlur &&  "blur-lg"} ${bottomLeftBlobColor}`}></div>}
