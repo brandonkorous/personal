@@ -56,7 +56,7 @@ const Footer = () => {
                 </div>
             </footer>
             <footer className="footer sm:footer-horizontal bg-neutral-500 text-base-500 p-10 border-t border-base-800 px-10 py-4">
-                <div className="w-full max-w-6xl mx-auto">
+                <div className="w-full max-w-3xl mx-auto">
                     <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 place-items-center gap-4 text-center">
                         <li className="col-span-full md:col-span-1">© {new Date().getFullYear()} Brandon Korous. All rights reserved.</li>
                         {FOOTER_LINKS_LEGAL.map((link: FooterLink) => (
