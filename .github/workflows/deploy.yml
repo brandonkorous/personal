@@ -25,31 +25,31 @@ jobs:
       - name: Read SemVer from package.json
         id: semver
         run: |
-            VERSION=$(jq -r .version package.json)
-            echo "VERSION=$VERSION" >> $GITHUB_ENV
-            echo "🔢 Using version: $VERSION"
-        
+          VERSION=$(jq -r .version package.json)
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "🔢 Using version: $VERSION"
 
       - name: Install kubelogin (for AAD auth)
         run: |
-            curl -LO https://github.com/Azure/kubelogin/releases/download/v0.0.25/kubelogin-linux-amd64.zip
-            unzip kubelogin-linux-amd64.zip -d kubelogin
-            sudo mv kubelogin/bin/linux_amd64/kubelogin /usr/local/bin
-            kubelogin --version
+          curl -sLO https://github.com/Azure/kubelogin/releases/download/v0.0.25/kubelogin-linux-amd64.zip
+          unzip kubelogin-linux-amd64.zip -d kubelogin
+          sudo mv kubelogin/bin/linux_amd64/kubelogin /usr/local/bin
+          kubelogin --version
+          rm -rf kubelogin
 
       - name: Set up Docker to use ACR
         run: |
-            az acr login --name $ACR_NAME
+          az acr login --name ${{ secrets.ACR_NAME }} --yes
 
       - name: Docker Build and Tag
         run: |
-            docker build --no-cache --build-arg FONT_AWESOME_NPM_TOKEN=${{ secrets.FONT_AWESOME_NPM_TOKEN }} -t ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:$VERSION .
-            docker tag $ACR_NAME.azurecr.io/$IMAGE_NAME:$VERSION $ACR_NAME.azurecr.io/$IMAGE_NAME:latest
+          docker build --no-cache --build-arg FONT_AWESOME_NPM_TOKEN=${{ secrets.FONT_AWESOME_NPM_TOKEN }} -t ${{ secrets.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:$VERSION .
+          docker tag ${{ secrets.ACR_NAME }}.azurecr.io/$IMAGE_NAME:$VERSION ${{ secrets.ACR_NAME }}.azurecr.io/$IMAGE_NAME:latest
 
       - name: Docker Push
         run: |
-            docker push $ACR_NAME.azurecr.io/$IMAGE_NAME:$VERSION
-            docker push $ACR_NAME.azurecr.io/$IMAGE_NAME:latest
+          docker push ${{ secrets.ACR_NAME }}.azurecr.io/$IMAGE_NAME:$VERSION
+          docker push ${{ secrets.ACR_NAME }}.azurecr.io/$IMAGE_NAME:latest
 
       - name: Set AKS Context
         uses: azure/aks-set-context@v3
@@ -58,20 +58,20 @@ jobs:
           cluster-name: ${{ secrets.AKS_CLUSTER }}
           resource-group: ${{ secrets.AZURE_RG }}
 
-
       - name: Set image version in deployment
         run: |
-            kubectl set image deployment/bk-website bk-website=${{ secrets.ACR_NAME }}.azurecr.io/bk-website:${{ env.VERSION }}
+          kubectl set image deployment/bk-website bk-website=${{ secrets.ACR_NAME }}.azurecr.io/bk-website:${{ env.VERSION }}
 
       - name: Render deployment.yaml with secrets
         run: |
           envsubst < deployment/deployment.yaml > deployment/deployment.final.yaml
         env:
           IMAGE_TAG: $VERSION
-          ACR_NAME: $ACR_NAME
+          ACR_NAME: ${{ secrets.ACR_NAME }}
 
       - name: Deploy to AKS
         run: |
           kubectl apply -f deployment/deployment.final.yaml
           kubectl apply -f deployment/service.yaml
           kubectl apply -f deployment/ingress.yaml
+          kubectl rollout status deployment/bk-website
