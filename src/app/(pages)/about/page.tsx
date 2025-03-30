@@ -6,6 +6,9 @@ import Link from "next/link";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 const AboutPage = () => {
+    const bgcolors = ["bg-primary", "bg-secondary", "bg-accent", "bg-warning", "bg-info", "bg-error", "bg-success"];
+    const bordercolors = ["border-primary", "border-secondary", "border-accent", "border-warning", "border-info", "border-error", "border-success"];
+    const textcolors = ["text-primary", "text-secondary", "text-accent", "text-warning", "text-info", "text-error", "text-success"];
     return (
         <>
             <Hero topLeftBlobColor="bg-secondary/20" bottomRightBlobColor="bg-primary/20" className="">
@@ -65,7 +68,7 @@ const AboutPage = () => {
                                     <FontAwesomeIcon icon={item.icon as IconProp} className={`text-${item.color}`} size="sm" fixedWidth />
                                 </div>
                                 <div className={`${index % 2 === 0 ? "timeline-start" : "timeline-end"} timeline-box text-2xl border-${item.color} border-4 shadow-lg`}>
-                                    <div className="">
+                                    <div className="p-4">
                                         <h3 className="text-neutral-500">{item.date}</h3>
                                         <h4 className="text-accent-500">{item.title}</h4>
                                         <p className="text-neutral">{item.description}</p>
