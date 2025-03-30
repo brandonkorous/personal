@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
 import { Coiny } from "next/font/google";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./globals.css";
 import Header from "@/components/site-header";
 import Footer from "@/components/site-footer";
+import { config } from "@fortawesome/fontawesome-svg-core";
+
+// Prevent fontawesome from adding its css since we did it manually above
+config.autoAddCss = false;
 
 
 const coiny = Coiny({

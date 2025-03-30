@@ -28,7 +28,6 @@ const Header = () => {
                                 <li><Link href="/services" className={`border-b-4 ${isActive("/services")}`}>Services</Link></li>
                                 <li><Link href="/portfolio" className={`border-b-4 ${isActive("/portfolio")}`}>Portfolio</Link></li>
                                 <li><Link href="/blog" className={`border-b-4 ${isActive("/blog")}`}>Blog</Link></li>
-                                <li><Link href="/contact" className={`border-b-4 ${isActive("/contact")}`}>Contact</Link></li>
                                 <li>
                                     <Link href="/contact" className="btn btn-primary rounded-full font-normal text-nowrap pt-1">
                                         <FontAwesomeIcon icon={faEnvelope} className="-mt-1" />
