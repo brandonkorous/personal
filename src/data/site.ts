@@ -43,8 +43,8 @@ export const FOOTER_LINKS = [
 ];
 
 export const FOOTER_LINKS_LEGAL = [
-    { title: "Privacy Policy", href: "/privacy-policy" },
-    { title: "Terms of Service", href: "/terms-of-service" },
+    { title: "Privacy Policy", href: "/privacy" },
+    { title: "Terms of Service", href: "/terms" },
     { title: "Sitemap", href: "/sitemap" },
 ]
 
