@@ -13,7 +13,7 @@ const ServicesPage = () => {
                             <FontAwesomeIcon icon={faCode} size="xl" />
                             Services
                         </div>
-                        <h1 className="py-0 mb-0">
+                        <h1 className="py-0 mb-0 text-3xl md:text-6xl">
                             How can I help <span className="text-secondary">Your Organization</span>?
                         </h1>
                         <div className="text-2xl">
@@ -32,11 +32,11 @@ const ServicesPage = () => {
 
             <section className="bg-secondary py-16">
                 <div className="container max-w-6xl mx-auto">
-                    <h2 className="text-4xl text-white text-center mb-12">Technical Expertise That Drives Results</h2>
+                    <h2 className="text-white text-center mb-12">Technical Expertise That Drives Results</h2>
                     
                     <div className="grid md:grid-cols-2 gap-8">
                         <div className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-primary">
-                            <h3 className="text-2xl mb-4 flex items-center gap-3 text-neutral">
+                            <h3 className="mb-4 flex items-center gap-3 text-neutral">
                                 <FontAwesomeIcon icon={faCode} className="text-primary" />
                                 Frontend Excellence
                             </h3>
@@ -58,7 +58,7 @@ const ServicesPage = () => {
                         </div>
 
                         <div className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-success">
-                            <h3 className="text-2xl mb-4 flex items-center gap-3 text-neutral">
+                            <h3 className="mb-4 flex items-center gap-3 text-neutral">
                                 <FontAwesomeIcon icon={faRocket} className="text-success" />
                                 Backend Architecture
                             </h3>
@@ -79,7 +79,7 @@ const ServicesPage = () => {
                         </div>
 
                         <div className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-accent">
-                            <h3 className="text-2xl mb-4 flex items-center gap-3 text-neutral">
+                            <h3 className="mb-4 flex items-center gap-3 text-neutral">
                                 <FontAwesomeIcon icon={faChartLine} className="text-accent" />
                                 Performance Optimization
                             </h3>
@@ -97,7 +97,7 @@ const ServicesPage = () => {
                         </div>
 
                         <div className="bg-white p-8 rounded-lg shadow-lg border-l-4 border-info">
-                            <h3 className="text-2xl mb-4 flex items-center gap-3 text-neutral">
+                            <h3 className="mb-4 flex items-center gap-3 text-neutral">
                                 <FontAwesomeIcon icon={faEnvelope} className="text-info" />
                                 Integration & Deployment
                             </h3>
@@ -135,7 +135,7 @@ const ServicesPage = () => {
                         <div className="card bg-base-100 border-4 border-primary shadow-lg">
                             <div className="card-body">
                                 <FontAwesomeIcon icon={faCode} className="text-primary text-4xl mb-4" />
-                                <h3 className="font-bold text-neutral text-center">Web Development</h3>
+                                <h3 className="text-neutral text-center">Web Development</h3>
                                 <p>Custom web applications built with modern technologies like React, Next.js, Vue.js, and .Net. Full-stack solutions that scale with your business.</p>
                                 <ul className="list-disc list-inside text-lg">
                                     <li>Custom Web Applications</li>
@@ -151,7 +151,7 @@ const ServicesPage = () => {
                         <div className="card bg-base-100 border-4 border-accent shadow-lg">
                             <div className="card-body">
                                 <FontAwesomeIcon icon={faRocket} className="text-accent text-4xl mb-4" />
-                                <h3 className="font-bold text-neutral text-center">Digital Strategy</h3>
+                                <h3 className="text-neutral text-center">Digital Strategy</h3>
                                 <p>Comprehensive digital strategies to help your business grow and succeed in the modern marketplace.</p>
                                 <ul className="list-disc list-inside text-lg">
                                     <li>Brand Development</li>
@@ -167,7 +167,7 @@ const ServicesPage = () => {
                         <div className="card bg-base-100 border-4 border-secondary shadow-lg">
                             <div className="card-body">
                                 <FontAwesomeIcon icon={faChartLine} className="text-secondary text-4xl mb-4" />
-                                <h3 className="font-bold text-neutral text-center">Business Optimization</h3>
+                                <h3 className="text-neutral text-center">Business Optimization</h3>
                                 <p>Streamline your operations and improve efficiency with custom automation solutions.</p>
                                 <ul className="list-disc list-inside text-lg">
                                     <li>Process Automation</li>
@@ -185,7 +185,7 @@ const ServicesPage = () => {
 
             <section className="bg-base py-16">
                 <div className="container max-w-6xl">
-                    <h2 className="font-coiny text-4xl text-center text-neutral-500 pb-8">Why Choose Me?</h2>
+                    <h2 className="font-coiny text-center text-neutral-500 pb-8">Why Choose Me?</h2>
                     <div className="grid gap-8 md:grid-cols-2">
                         <div className="card bg-white shadow-lg">
                             <div className="card-body">
@@ -198,7 +198,7 @@ const ServicesPage = () => {
 
                         <div className="card bg-white shadow-lg">
                             <div className="card-body">
-                                <h3 className="text-2xl font-bold text-neutral">Custom Solutions</h3>
+                                <h3 className="font-bold text-neutral">Custom Solutions</h3>
                                 <p className="text-neutral-500">
                                     Every business is unique, and I believe in creating tailored solutions that address your specific needs. I work closely with you to understand your goals and develop strategies that align with your vision.
                                 </p>
@@ -207,7 +207,7 @@ const ServicesPage = () => {
 
                         <div className="card bg-white shadow-lg">
                             <div className="card-body">
-                                <h3 className="text-2xl font-bold text-neutral">Innovation & Technology</h3>
+                                <h3 className="font-bold text-neutral">Innovation & Technology</h3>
                                 <p className="text-neutral-500">
                                     I stay at the forefront of technological advancements and industry trends, ensuring that your solutions are built with the latest and most effective tools and methodologies.
                                 </p>
@@ -216,7 +216,7 @@ const ServicesPage = () => {
 
                         <div className="card bg-white shadow-lg">
                             <div className="card-body">
-                                <h3 className="text-2xl font-bold text-neutral">Results-Driven Approach</h3>
+                                <h3 className="font-bold text-neutral">Results-Driven Approach</h3>
                                 <p className="text-neutral-500">
                                     My focus is always on delivering measurable results that drive your business forward. I combine technical expertise with business acumen to ensure your investments yield tangible returns.
                                 </p>
@@ -230,7 +230,7 @@ const ServicesPage = () => {
                 <div className="container max-w-6xl">
                     <div className="card bg-white border-4 border-primary shadow-xl">
                         <div className="card-body text-center">
-                            <h2 className="font-coiny text-4xl text-neutral-500">Ready to Get Started?</h2>
+                            <h2 className="font-coiny text-neutral-500">Ready to Get Started?</h2>
                             <p className="text-xl text-neutral-500 max-w-2xl mx-auto">
                                 Let&apos;s discuss how I can help transform your business with innovative technology solutions.
                             </p>

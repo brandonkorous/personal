@@ -147,14 +147,14 @@ export default function Home() {
                             Don&apos;t just take my word for it.  Here&apos;s what my partners and clients have to say.
                         </p>
                     </div>
-                    <div className="container grid gap-10 lg:grid-cols-3">
+                    <div className="container grid gap-y-10 gap-x-20 lg:grid-cols-3">
                         <Testimonial name="Sarah Johnson" initials="SJ" position="CEO, Johnson & Co." statement="Brandon Korous tranformed our online presence with a perfect blend of technical expertise and creative vision.  Our engagement has never been higher." />
                         <Testimonial name="Michael Chen" initials="MC" position="Marketing Director, GrowthLabs" statement="Working with Brandon Korous was a game-changer for our automation strategy.  The results exceeded our expectations in every way." />
                         <Testimonial name="Jessica Williams" initials="JW" position="Founder, CreativeEdge" statement="Brandon Korous&apos;s innovative approach to modernization helped us out in a crowded market.  Highly recommend!" />
                     </div>
                 </div>
             </section>
-            <section className="bg-base-500 py-16 text-neutral-500">
+            <section className="bg-base-500 py-16 text-neutral-500 container">
                 <div className="card card-border max-w-6xl mx-auto border-primary bg-white items-center">
                     <div className="text-center mt-16">
                         <h2 className="font-coiny">Ready to Work Together?</h2>
@@ -163,7 +163,7 @@ export default function Home() {
                         </p>
                     </div>
 
-                    <div className="flex items-center space-x-4 mb-16">
+                    <div className="flex flex-col md:flex-row text-center space-4 gap-4 mb-16">
                         <Link href="/contact" className="btn btn-primary btn-lg rounded-full">
                             <FontAwesomeIcon icon={faEnvelope} />
                             Get in Touch

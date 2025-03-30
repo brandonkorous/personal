@@ -12,6 +12,11 @@
     .container {
         @apply w-5/6 mx-auto px-6;
     }
+
+    .indicator {
+        @apply indicator;
+        width: 100% !important;
+    }
 }
 
 @layer base {

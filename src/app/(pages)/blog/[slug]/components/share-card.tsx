@@ -1,3 +1,4 @@
+'use client';
 import { faFacebook, faLinkedin, faTwitter } from "@awesome.me/kit-654a0ecbfd/icons/classic/brands";
 import { faCopy } from "@awesome.me/kit-654a0ecbfd/icons/classic/solid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -37,28 +38,28 @@ const ShareCard = ({ title }: ShareCardProps) => {
             <div className="flex items-center justify-between">
                 <button
                     onClick={() => handleShare("facebook")}
-                    className="w-12 h-12 rounded-full bg-secondary/5 flex items-center justify-center text-secondary hover:bg-secondary/30 transition-colors"
+                    className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary hover:bg-primary/30 transition-colors"
                     aria-label="Share on Facebook"
                 >
                     <FontAwesomeIcon icon={faFacebook} size="lg" fixedWidth />
                 </button>
                 <button
                     onClick={() => handleShare("twitter")}
-                    className="w-12 h-12 rounded-full bg-secondary/5 flex items-center justify-center text-secondary hover:bg-secondary/30 transition-colors"
+                    className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary hover:bg-primary/30 transition-colors"
                     aria-label="Share on Twitter"
                 >
                     <FontAwesomeIcon icon={faTwitter} size="lg" fixedWidth />
                 </button>
                 <button
                     onClick={() => handleShare("linkedin")}
-                    className="w-12 h-12 rounded-full bg-secondary/5 flex items-center justify-center text-secondary hover:bg-secondary/30 transition-colors"
+                    className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary hover:bg-primary/30 transition-colors"
                     aria-label="Share on LinkedIn"
                 >
                     <FontAwesomeIcon icon={faLinkedin} size="lg" fixedWidth />
                 </button>
                 <button
                     onClick={() => handleShare("copy")}
-                    className="w-12 h-12 rounded-full bg-secondary/5 flex items-center justify-center text-secondary hover:bg-secondary/30 transition-colors"
+                    className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary hover:bg-primary/30 transition-colors"
                     aria-label="Copy link"
                 >
                     <FontAwesomeIcon icon={faCopy} size="lg" fixedWidth />

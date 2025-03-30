@@ -15,6 +15,7 @@ export const Article = ({
     article,
     relatedPosts = [],
 }: BlogArticleProps) => {
+    console.log(article);
     return (
         <main className="flex-1">
             {/* Hero Section */}
@@ -53,7 +54,7 @@ export const Article = ({
 
                     <div className="relative h-[400px] w-full overflow-hidden rounded-xl mb-12">
                         <Image
-                            src={article.image || "/placeholder.svg"}
+                            src={article.image || "https://placehold.co/600x400"}
                             alt={article.title}
                             width={1200}
                             height={800}

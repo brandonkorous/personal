@@ -54,26 +54,28 @@ const AboutPage = () => {
                 </div>
             </section >
             <section className="bg-base py-16">
-                <h2 className="text-center text-neutral-500 pb-4">My Journey</h2>
+                <div className="container">
+                    <h2 className="text-center text-neutral-500 pb-4">My Journey</h2>
 
-                <ul className="timeline timeline-vertical  max-w-3xl mx-auto">
-                    {TIME_LINE_ITEMS.map((item, index) => (
-                        <li key={index} className="mb-0">
-                            {index > 0 && <hr className={`bg-${item.color}`} />}
-                            <div className={`timeline-middle border-${item.color} border-4 bg-white h-10 w-10 rounded-full items-center justify-center flex`}>
-                                <FontAwesomeIcon icon={item.icon as IconProp} className={`text-${item.color}`} size="sm" fixedWidth />
-                            </div>
-                            <div className={`${index % 2 === 0 ? "timeline-start" : "timeline-end"} timeline-box text-2xl border-${item.color} border-4 shadow-lg`}>
-                                <div className="">
-                                    <h3 className="text-neutral-500">{item.date}</h3>
-                                    <h4 className="text-accent-500">{item.title}</h4>
-                                    <p className="text-neutral">{item.description}</p>
+                    <ul className="timeline max-md:timeline-compact timeline-vertical ">
+                        {TIME_LINE_ITEMS.map((item, index) => (
+                            <li key={index} className="mb-0">
+                                {index > 0 && <hr className={`bg-${item.color}`} />}
+                                <div className={`timeline-middle border-${item.color} border-4 bg-white h-10 w-10 rounded-full items-center justify-center flex`}>
+                                    <FontAwesomeIcon icon={item.icon as IconProp} className={`text-${item.color}`} size="sm" fixedWidth />
                                 </div>
-                            </div>
-                            {index < TIME_LINE_ITEMS.length - 1 && <hr className={`bg-${item.color}`} />}
-                        </li>
-                    ))}
-                </ul>
+                                <div className={`${index % 2 === 0 ? "timeline-start" : "timeline-end"} timeline-box text-2xl border-${item.color} border-4 shadow-lg`}>
+                                    <div className="">
+                                        <h3 className="text-neutral-500">{item.date}</h3>
+                                        <h4 className="text-accent-500">{item.title}</h4>
+                                        <p className="text-neutral">{item.description}</p>
+                                    </div>
+                                </div>
+                                {index < TIME_LINE_ITEMS.length - 1 && <hr className={`bg-${item.color}`} />}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </section>
 
             <section className="bg-accent py-16">
@@ -115,25 +117,27 @@ const AboutPage = () => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
             <section className="bg-white py-16 text-neutral-500">
-                <div className="card card-border max-w-6xl mx-auto border-primary bg-white items-center">
-                    <div className="text-center mt-16">
-                        <h2 className="font-coiny">Let&apos;s Build Something Great Together!</h2>
-                        <p className="max-w-2xl mx-auto text-xl">
-                            Whether you&apos;re looking for innovative tech solutions, creative strategies, or a fresh perspective, I&apos;m here to collaborate and bring your vision to life.
-                        </p>
-                    </div>
+                <div className="container">
+                    <div className="card card-border max-w-6xl mx-auto border-primary bg-white items-center">
+                        <div className="text-center mt-16">
+                            <h2 className="font-coiny">Let&apos;s Build Something Great Together!</h2>
+                            <p className="max-w-2xl mx-auto text-xl">
+                                Whether you&apos;re looking for innovative tech solutions, creative strategies, or a fresh perspective, I&apos;m here to collaborate and bring your vision to life.
+                            </p>
+                        </div>
 
-                    <div className="flex items-center space-x-4 mb-16">
-                        <Link href="/contact" className="btn btn-primary btn-lg rounded-full">
-                            <FontAwesomeIcon icon={faEnvelope} />
-                            Contact Me
-                        </Link>
-                        <Link href="/portfolio" className="btn btn-secondary btn-lg btn-outline rounded-full">
-                            View My Work
-                            <FontAwesomeIcon icon={faArrowRight} />
-                        </Link>
+                        <div className="flex flex-col md:flex-row items-center space-4 gap-4 mb-16">
+                            <Link href="/contact" className="btn btn-primary btn-lg rounded-full">
+                                <FontAwesomeIcon icon={faEnvelope} />
+                                Contact Me
+                            </Link>
+                            <Link href="/portfolio" className="btn btn-secondary btn-lg btn-outline rounded-full">
+                                View My Work
+                                <FontAwesomeIcon icon={faArrowRight} />
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </section>
