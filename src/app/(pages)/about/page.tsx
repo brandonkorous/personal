@@ -6,9 +6,6 @@ import Link from "next/link";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 const AboutPage = () => {
-    const bgcolors = ["bg-primary", "bg-secondary", "bg-accent", "bg-warning", "bg-info", "bg-error", "bg-success"];
-    const bordercolors = ["border-primary", "border-secondary", "border-accent", "border-warning", "border-info", "border-error", "border-success"];
-    const textcolors = ["text-primary", "text-secondary", "text-accent", "text-warning", "text-info", "text-error", "text-success"];
     return (
         <>
             <Hero topLeftBlobColor="bg-secondary/20" bottomRightBlobColor="bg-primary/20" className="">
@@ -34,6 +31,9 @@ const AboutPage = () => {
                     </div>
                 </div>
             </Hero>
+            <span className="bg-primary bg-secondary bg-accent bg-warning bg-info bg-error bg-success hidden"></span>
+            <span className="border-primary border-secondary border-accent border-warning border-info border-error border-success hidden"></span>
+            <span className="text-primary text-secondary text-accent text-warning text-info text-error text-success hidden"></span>
             <section className="bg-white">
                 <div className="container py-16 max-w-6xl text-neutral-500">
                     <h2 className="font-coiny text-4xl text-center">My Story</h2>
