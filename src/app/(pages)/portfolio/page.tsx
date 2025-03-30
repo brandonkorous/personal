@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function Portfolio() {
     return (
 
-        <div className="flex flex-col min-h-screen bg-[#F5EBDC]">
+        <>
             <main className="flex-1">
                 <Hero bottomLeftBlobColor="bg-secondary/20" bottomRightBlobColor="bg-primary/20" className="">
                     <div className="gap-10 lg:gap-20 items-center max-w-4xl mx-auto">
@@ -57,9 +57,9 @@ export default function Portfolio() {
                     </div>
                 </section>
 
-                <section className="bg-white">
-                    <div className="container py-16 max-w-6xl text-neutral">
-                        <h2 className="text-2xl md:text-3xl font-extrabold text-[#502314] mb-8">Featured Project</h2>
+                <section className="bg-white py-16">
+                    <div className="container text-neutral">
+                        <h2 className="mb-8">Featured Project</h2>
 
                         {PROJECTS.filter(project => project.featured).map((project) => (
                             <article
@@ -81,11 +81,12 @@ export default function Portfolio() {
                                     <div className="badge badge-accent font-bold">
                                         {project.category}
                                     </div>
+                                    <div className="badge badge-warning ml-2">sample</div>
                                     <h3 className="mt-4">{project.title}</h3>
                                     <p className="mb-4">{project.description}</p>
                                     <Link
                                         href={`/portfolio/${project.slug}`}
-                                        className="text-primary"
+                                        className="text-primary font-medium"
                                     >
                                         View Project
                                         <FontAwesomeIcon icon={faArrowRight} className="ml-1 h-4 w-4" />
@@ -96,9 +97,9 @@ export default function Portfolio() {
                     </div>
                 </section>
 
-                <section className="py-16 bg-[#F5EBDC]">
+                <section className="py-16 bg-base">
                     <div className="container">
-                        <h2 className="text-2xl md:text-3xl font-extrabold text-[#502314] mb-8">Recent Projects</h2>
+                        <h2 className="text-neutral mb-8">Recent Projects</h2>
 
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {PROJECTS.filter(project => !project.featured).map((project) => (
@@ -115,17 +116,18 @@ export default function Portfolio() {
                                             className="w-full h-full object-cover"
                                         />
                                         <div className="absolute top-4 left-4">
-                                            <span className="inline-block rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-[#502314]">
+                                            <span className="badge badge-white">
                                                 {project.category}
                                             </span>
+                                            <div className="badge badge-warning ml-2">sample</div>
                                         </div>
                                     </div>
                                     <div className="p-6">
-                                        <h3 className="text-xl font-bold text-[#502314] mb-2">{project.title}</h3>
-                                        <p className="text-[#502314]/70 text-sm mb-4">{project.description}</p>
+                                        <h3 className="text-neutral mb-2">{project.title}</h3>
+                                        <p className="text-neutral mb-4">{project.description}</p>
                                         <Link
                                             href={`/portfolio/${project.slug}`}
-                                            className="inline-flex items-center text-[#E4002B] font-medium hover:underline text-sm"
+                                            className="inline-flex items-center text-primary font-medium hover:underline"
                                         >
                                             View Project
                                             <FontAwesomeIcon icon={faArrowRight} className="ml-1 h-4 w-4" />
@@ -136,8 +138,9 @@ export default function Portfolio() {
                         </div>
 
                         <div className="mt-12 text-center">
-                            <a className="bg-[#004687] hover:bg-[#004687]/90 text-white rounded-full px-8">
+                            <a className="btn btn-secondary btn-lg rounded-full" href="/portfolio">
                                 Load More Projects
+                                <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
                             </a>
                         </div>
                     </div>
@@ -145,37 +148,39 @@ export default function Portfolio() {
 
                 <section className="py-16 bg-white">
                     <div className="container">
-                        <h2 className="text-2xl md:text-3xl font-extrabold text-[#502314] mb-12 text-center">
+                        <h2 className="text-neutral mb-12 text-center">
                             Client Testimonials
                         </h2>
-                        <div className="container flex gap-10">
+                        <div className="flex flex-col md:flex-row gap-x-20 gap-y-10">
                             <Testimonial name="Michael Chen" initials="MC" position="CTO, Enterprise Solutions Inc." statement="Brandon's approach to modernizing our legacy systems was exceptional. He not only understood our technical challenges but also helped us implement automation solutions that dramatically improved our efficiency." />
                             <Testimonial name="Sarah Johnson" initials="SJ" position="VP of Digital, TechStart" statement="Working with Brandon on our automation initiative was a game-changer. His technical expertise combined with his innovative thinking helped us eliminate repetitive tasks and focus on strategic initiatives. We've seen a 40% increase in productivity since launch." />
                         </div>
                     </div>
                 </section>
-                <section className="bg-primary py-16 text-neutral-500">
-                    <div className="card card-border max-w-6xl mx-auto border-primary-300 bg-white items-center">
-                        <div className="text-center mt-16">
-                            <h2 className="font-coiny">Ready to Start Your Project?</h2>
-                            <p className="max-w-2xl mx-auto text-xl">
-                                Let&apos;s work together to create innovative solutions that help your business thrive in the digital age.
-                            </p>
-                        </div>
+                <section className="bg-primary py-16 text-neutral">
+                    <div className='container'>
+                        <div className="card card-border max-w-6xl mx-auto border-primary-300 bg-white items-center">
+                            <div className="text-center mt-16">
+                                <h2 className="font-coiny">Ready to Start Your Project?</h2>
+                                <p className="max-w-2xl mx-auto text-xl">
+                                    Let&apos;s work together to create innovative solutions that help your business thrive in the digital age.
+                                </p>
+                            </div>
 
-                        <div className="flex items-center space-x-4 mb-16">
-                            <Link href="/contact" className="btn btn-primary btn-lg rounded-full">
-                                <FontAwesomeIcon icon={faEnvelope} />
-                                Contact Me
-                            </Link>
-                            <Link href="/services" className="btn btn-secondary btn-lg btn-outline rounded-full">
-                                View Services
-                                <FontAwesomeIcon icon={faArrowRight} />
-                            </Link>
+                            <div className="flex flex-col md:flex-row items-center space-x-4 mb-16">
+                                <Link href="/contact" className="btn btn-primary btn-lg rounded-full">
+                                    <FontAwesomeIcon icon={faEnvelope} />
+                                    Contact Me
+                                </Link>
+                                <Link href="/services" className="btn btn-secondary btn-lg btn-outline rounded-full">
+                                    View Services
+                                    <FontAwesomeIcon icon={faArrowRight} />
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </section>
             </main>
-        </div>
+        </>
     );
 }

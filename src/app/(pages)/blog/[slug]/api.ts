@@ -5,7 +5,6 @@ export const getAllBlogPosts = async () => {
 };
 
 export const getBlogPostBySlug = async (slug: string) => {
-    console.log("slug", slug);
     return BLOG_POSTS.find(post => post.slug === slug);
 };
 

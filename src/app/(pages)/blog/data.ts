@@ -14,14 +14,14 @@ export const BLOG_AUTHORS = {
         role: "Tech Consultant & Content Creator",
         initials: "BK",
         bio: "Brandon helps entrepreneurs and companies with tech consulting, branding, automation, modernization and many more technology related subjects.",
-        image: "/placeholder.svg?height=200&width=200",
+        image: "https://placehold.co/600x400",
     },
     sarah: {
         name: "Sarah Johnson",
         role: "Brand Strategist",
         initials: "SJ",
         bio: "Sarah is a brand strategist with over 8 years of experience helping businesses develop effective brand identities and marketing strategies.",
-        image: "/placeholder.svg?height=200&width=200",
+        image: "https://placehold.co/600x400",
     },
 };
 
