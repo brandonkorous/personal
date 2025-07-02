@@ -16,6 +16,7 @@ const coiny = Coiny({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://brandonkorous.com'),
     title: "Brandon Korous - Bold Ideas.  Creative Solutions.",
     description: "Tech expertise, innovation, and automation to help your brand stand out and operate efficiently.",
     openGraph: {
