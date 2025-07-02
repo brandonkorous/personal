@@ -43,7 +43,7 @@
     }
 
     p {
-        @apply text-lg text-black leading-relaxed py-2;
+        @apply text-black leading-relaxed py-2;
     }
 
     a {
@@ -64,4 +64,8 @@
 .input,
 .textarea {
     border: 1px;
+}
+
+.printables {
+    zoom: 0.75;
 }

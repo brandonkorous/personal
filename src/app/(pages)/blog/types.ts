@@ -1,15 +1,15 @@
 export interface Article {
-        title: string
-        excerpt: string
-        body: string
-        content: string
-        createdAt: string
-        readTime?: string
-        category?: string
-        slug: string
-        image: string
-        tags?: string[]
-        author: Author
+    title: string
+    excerpt: string
+    body: string
+    content: string
+    createdAt: string
+    readTime?: string
+    category?: string
+    slug: string
+    image: string
+    tags?: string[]
+    author: Author
 }
 
 export interface Author {
@@ -48,5 +48,25 @@ export interface BlogArticleProps {
     relatedPosts?: ArticleBlurb[]
     onShare?: () => void
     onBookmark?: () => void
-    slug: string
+}
+
+// API Response types for external blog service
+export interface ApiArticleResponse {
+    id: string
+    title: string
+    subTitle?: string
+    safeTitle: string
+    intro: string
+    body: string
+    type: string
+    tags?: string[]
+    status: string
+    order: number
+    image?: string
+    metaKeywords?: string
+    metaDescription?: string
+    metaAuthor?: string
+    categoryId?: string
+    createdAt: string
+    updatedAt: string
 }

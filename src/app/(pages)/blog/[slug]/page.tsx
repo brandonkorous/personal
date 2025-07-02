@@ -20,13 +20,13 @@ export const generateMetadata = async ({ params }: { params: Promise<{ slug: str
         title: `${post.title} | BK's Blog`,
         description: post.excerpt,
         keywords: post.tags?.join(", ") || "",
-        authors: [{ name: post.author }],
+        authors: [{ name: post.author.name }],
         openGraph: {
             title: post.title,
             description: post.excerpt,
             type: "article",
-            publishedTime: post.date,
-            authors: [post.author],
+            publishedTime: post.createdAt,
+            authors: [post.author.name],
             images: [
                 {
                     url: post.image,
@@ -71,19 +71,11 @@ const BlogPostPage = async ({ params }: { params: Promise<{ slug: string }> }) =
     }
 
     // Get related posts
-    const relatedPostsRaw = await getRelatedBlogPosts(post.category);
-
-    // Map to ArticleBlurb type
-    const relatedPosts = relatedPostsRaw.map((p: any) => ({
-        ...p,
-        safeTitle: p.safeTitle ?? p.slug, // fallback if safeTitle is missing
-        intro: p.intro ?? p.excerpt,      // fallback if intro is missing
-        createdAt: p.createdAt ?? p.date, // fallback if createdAt is missing
-    }));
+    const relatedPosts = await getRelatedBlogPosts(post.category || "");
 
     return (
         <div className="flex flex-col min-h-screen bg-beige">
-            <Article article={post} relatedPosts={relatedPosts} slug={post.slug} />
+            <Article article={post} relatedPosts={relatedPosts} />
         </div>
     );
 };
