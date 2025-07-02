@@ -6,12 +6,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 
-const FeaturedArticle = ({ title, slug, excerpt, date, image, tags = [] }: ArticleBlurb) => {
+const FeaturedArticle = ({ title, safeTitle, intro, createdAt, image, tags = [] }: ArticleBlurb) => {
     return (
         <article className="grid md:grid-cols-2 gap-8 items-center">
             <div className="relative overflow-hidden rounded-xl">
                 <Image
-                    src={image || "/placeholder.svg"}
+                    src={image || 'https://placehold.co/600x400'}
                     alt={title}
                     width={600}
                     height={400}
@@ -22,7 +22,7 @@ const FeaturedArticle = ({ title, slug, excerpt, date, image, tags = [] }: Artic
                 <div className="flex items-center gap-6 ">
                     <span className="flex items-center text-neutral gap-2">
                         <FontAwesomeIcon icon={faCalendarDays} size="lg" />
-                        {formatDate(date)}
+                        {formatDate(createdAt)}
                     </span>
                     <span className="flex items-center text-neutral gap-2">
                         <FontAwesomeIcon icon={faTag} size="xl" />
@@ -34,9 +34,9 @@ const FeaturedArticle = ({ title, slug, excerpt, date, image, tags = [] }: Artic
                     </span>
                 </div>
                 <h3 className="text-2xl md:text-3xl font-bold text-neutral">{title}</h3>
-                <p className="text-xl">{excerpt}</p>
+                <p className="text-xl">{intro}</p>
                 <Link
-                    href={`/blog/${slug}`}
+                    href={`/blog/${safeTitle}`}
                     className="inline-flex items-center text-primary font-medium hover:underline"
                 >
                     Read Full Article

@@ -1,15 +1,16 @@
-# Project Intake Wizard
+# Personal Brand Website
 
 ## Overview
 
-The Project Intake Wizard is a web application designed to collect project information from potential clients. It guides users through a series of steps to gather essential details about their project, including contact information, project type, description, timeline, budget, and more.
+This is the personal brand website for showcasing professional achievements, projects, and skills. It serves as a portfolio and a platform to connect with potential clients, collaborators, or employers.
 
 ## Features
 
-- Multi-step form to collect project details
-- Email notifications for new project submissions
-- Save draft submissions to allow users to complete the form later
-- Responsive design for various devices
+- Responsive design for seamless viewing on all devices
+- Portfolio section to highlight projects and achievements
+- Contact form for inquiries and collaborations
+- Blog section for sharing insights and updates
+- Integration with email services for notifications
 - Easy to customize and extend
 
 ## Technologies Used
@@ -34,8 +35,8 @@ The Project Intake Wizard is a web application designed to collect project infor
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/project-intake-wizard.git
-    cd project-intake-wizard
+    git clone https://github.com/brandonkorous/personal.git
+    cd personal
     ```
 
 2. Install dependencies:
@@ -50,13 +51,18 @@ The Project Intake Wizard is a web application designed to collect project infor
 
     ```plaintext
     RESEND_API_KEY=your_resend_api_key
-    RESEND_EMAIL_PROJECT_FROM=your_project_from_email
-    RESEND_EMAIL_TO=your_to_email
+    RESEND_EMAIL_FROM=your_email_from
+    RESEND_EMAIL_TO=your_email_to
     ```
 
 ### Tailwind CSS Configuration
 
-The application uses a custom Tailwind CSS configuration located in `tailwind.config.js`. You can modify this file to adjust the theme, colors, or other Tailwind settings as needed.
+The application uses a custom Tailwind CSS configuration located in globals.css. You can modify this file to adjust the theme, colors, or other Tailwind settings as needed.
+NOTE: This application is use Tailwind CSS v4.1, which is not using `tailwind.config.js`.
+
+### DaisyUI Configuration
+
+This application uses a custom DaisyUI configuration located in `globals.css`.  You can modify this filie to adjust the theme, colors, or other DaisyUI components as needed.
 
 ### Running the Application
 
@@ -98,21 +104,19 @@ yarn start
 ├── src/                    # Source code
 │   ├── app/                # Next.js app directory
 │   │   └── (pages)/        # Application pages
-│   │       └── project-intake/
+│   │       └── personal-brand/
 │   │           └── components/
-│   │               ├── additional-info-step.tsx
-│   │               ├── basic-info-step.tsx
-│   │               ├── project-details-step.tsx
-│   │               ├── project-intake-wizard.tsx
-│   │               ├── project-type-step.tsx
-│   │               ├── review-step.tsx
-│   │               ├── success-step.tsx
-│   │               └── draft-saving.tsx  # New component for saving drafts
+│   │               ├── about-section.tsx
+│   │               ├── contact-form.tsx
+│   │               ├── portfolio-section.tsx
+│   │               ├── blog-section.tsx
+│   │               ├── header.tsx
+│   │               ├── footer.tsx
+│   │               └── notification-service.tsx
 ├── .env                    # Environment variables
 ├── .gitignore              # Git ignore file
 ├── package.json            # Project metadata and scripts
 ├── README.md               # Project documentation
-├── tailwind.config.js      # Tailwind CSS configuration
 └── tsconfig.json           # TypeScript configuration
 ```
 

@@ -1,8 +1,9 @@
 export interface Article {
         title: string
         excerpt: string
+        body: string
         content: string
-        date: string
+        createdAt: string
         readTime?: string
         category?: string
         slug: string
@@ -31,12 +32,13 @@ export interface Comment {
 }
 
 export interface ArticleBlurb {
+    id: string
     title: string
-    excerpt: string
+    safeTitle: string
+    intro: string
     category: string
-    date: string
+    createdAt: string
     image: string
-    slug: string
     tags?: string[]
 }
 

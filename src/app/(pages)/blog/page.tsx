@@ -2,11 +2,15 @@ import Hero from "@/components/hero";
 import { BLOG_POSTS, CATEGORIES } from "./data";
 import Link from "next/link";
 import Article from "@/components/article";
-import FeaturedArticle from "@/components/featured-article";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenNib } from "@awesome.me/kit-654a0ecbfd/icons/classic/solid";
+import { getFeaturedBlogPosts } from "./api";
+import FeaturedArticle from "@/components/featured-article";
+import { ArticleBlurb } from "./types";
 
-const Blog = () => {
+const Blog = async () => {
+    const featuredPosts = await getFeaturedBlogPosts();
+    console.log(featuredPosts.length, "featuredPosts");
     return (
         <>
             <Hero topLeftBlobColor="bg-secondary/20" bottomRightBlobColor="bg-primary/20" className="">
@@ -19,9 +23,19 @@ const Blog = () => {
                         <h1 className="py-0 mb-0">
                             Insights on <span className="text-primary">Technology</span>, <span className="text-secondary">Innovation</span>, and <span className="text-accent">Automation</span>
                         </h1>
-                        <div className="text-xl">
+                        <div className="text-xl pb-8">
                             Practical tips, industry trends, and personal stories to help you build a stronger technological foundation.
                         </div>
+                        <label className="input rounded-full input-xl border border-primary/20 focus:ring-2 focus:ring-primary/50 w-full">
+                            <input
+                                type="text"
+                                placeholder="Search articles..."
+                                className=""
+                            />
+                            <button className="btn btn-primary rounded-full">
+                                Search
+                            </button>
+                        </label>
                     </div>
                 </div>
             </Hero>
@@ -48,7 +62,7 @@ const Blog = () => {
             <section className="py-16 bg-white">
                 <div className="container">
                     <h2 className="text-neutral mb-8">Featured Post</h2>
-                    {BLOG_POSTS.filter(blog => blog.featured).map((featuredPost) => (
+                    {featuredPosts.map((featuredPost: ArticleBlurb) => (
                         <FeaturedArticle key={featuredPost.id} {...featuredPost} />
 
                     ))}

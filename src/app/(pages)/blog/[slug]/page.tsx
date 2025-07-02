@@ -1,12 +1,13 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
-import { getBlogPostBySlug, getRelatedBlogPosts } from "./api"
+import { getRelatedBlogPosts, getBlogBySafeTitle } from "./api"
 import Article from "./components/article"
 
 // Generate metadata for the page
 export const generateMetadata = async ({ params }: {params: Promise<{slug: string}>}): Promise<Metadata> => {
     const { slug } = await params;
-    const post = await getBlogPostBySlug(slug)
+    //const post = await getBlogPostBySlug(slug)
+    const post = await getBlogBySafeTitle(slug);
 
     if (!post) {
         return {
@@ -19,13 +20,13 @@ export const generateMetadata = async ({ params }: {params: Promise<{slug: strin
         title: `${post.title} | BK's Blog`,
         description: post.excerpt,
         keywords: post.tags?.join(", ") || "",
-        authors: [{ name: post.author.name }],
+        authors: [{ name: post.author }],
         openGraph: {
             title: post.title,
             description: post.excerpt,
             type: "article",
             publishedTime: post.date,
-            authors: [post.author.name],
+            authors: [post.author],
             images: [
                 {
                     url: post.image,
@@ -61,7 +62,8 @@ export const revalidate = 0
 
 const BlogPostPage = async ({ params }: {params: Promise<{slug: string}>}) => {
     const { slug } = await params;
-    const post = await getBlogPostBySlug(slug);
+    //const post = await getBlogPostBySlug(slug);
+    const post = await getBlogBySafeTitle(slug);
 
     if (!post) {
         console.log(post);
