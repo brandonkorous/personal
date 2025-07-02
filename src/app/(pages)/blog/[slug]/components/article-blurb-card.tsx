@@ -25,7 +25,7 @@ export const ArticleBlurbCard = ({ article }: { article: ArticleBlurb }) => {
                         <div className="flex items-center gap-4 text-sm text-neutral/60 mb-3">
                             <span className="flex items-center text-nowrap">
                                 <FontAwesomeIcon icon={faCalendar} className="mr-1" fixedWidth />
-                                {formatDate(article.date)}
+                                {formatDate(article.createdAt)}
                             </span>
                             {article.category && (
                                 <span className="flex items-center">
@@ -37,10 +37,10 @@ export const ArticleBlurbCard = ({ article }: { article: ArticleBlurb }) => {
                         <h3 className="text-xl text-neutral">{article.title}</h3>
                     </div>
                 </div>
-                <p className="text-neutral/80 mb-4">{article.excerpt}</p>
+                <p className="text-neutral/80 mb-4">{article.intro}</p>
                 <div className="card-actions justify-start">
                     <Link
-                        href={`/blog/${article.slug}`}
+                        href={`/blog/${article.safeTitle}`}
                         className="inline-flex items-center text-primary font-medium hover:underline text-sm"
                     >
                         Read More

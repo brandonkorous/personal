@@ -9,7 +9,7 @@ import { faCalendar, faClock, faTag } from "@awesome.me/kit-654a0ecbfd/icons/cla
 //import AuthorCard from "./aurthor-card";
 import ShareCard from "./share-card";
 import ArticleBlurbCard from "./article-blurb-card";
-import { ArticleBlurb, BlogArticleProps } from "../../types";
+import { type ArticleBlurb, BlogArticleProps } from "../../types";
 
 export const Article = ({
     article,
@@ -69,7 +69,7 @@ export const Article = ({
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col lg:flex-row gap-8">
                         <div className="lg:w-2/3">
-                            <div className="lg:w-2/3" dangerouslySetInnerHTML={{__html: article.body}} />
+                            <div className="lg:w-2/3" dangerouslySetInnerHTML={{ __html: article.body }} />
 
                             {article.tags && article.tags.length > 0 && (
                                 <div className="flex items-center justify-between border-t border-b border-neutral/10 py-6 my-8">
