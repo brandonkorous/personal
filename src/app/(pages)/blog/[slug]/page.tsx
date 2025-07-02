@@ -4,7 +4,7 @@ import { getRelatedBlogPosts, getBlogBySafeTitle } from "./api"
 import Article from "./components/article"
 
 // Generate metadata for the page
-export const generateMetadata = async ({ params }: {params: Promise<{slug: string}>}): Promise<Metadata> => {
+export const generateMetadata = async ({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> => {
     const { slug } = await params;
     //const post = await getBlogPostBySlug(slug)
     const post = await getBlogBySafeTitle(slug);
@@ -60,7 +60,7 @@ export const generateStaticParams = async () => {
 export const dynamic = "force-dynamic"
 export const revalidate = 0
 
-const BlogPostPage = async ({ params }: {params: Promise<{slug: string}>}) => {
+const BlogPostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
     const { slug } = await params;
     //const post = await getBlogPostBySlug(slug);
     const post = await getBlogBySafeTitle(slug);
@@ -71,8 +71,15 @@ const BlogPostPage = async ({ params }: {params: Promise<{slug: string}>}) => {
     }
 
     // Get related posts
-    const relatedPosts = await getRelatedBlogPosts(post.category)
+    const relatedPostsRaw = await getRelatedBlogPosts(post.category);
 
+    // Map to ArticleBlurb type
+    const relatedPosts = relatedPostsRaw.map((p: any) => ({
+        ...p,
+        safeTitle: p.safeTitle ?? p.slug, // fallback if safeTitle is missing
+        intro: p.intro ?? p.excerpt,      // fallback if intro is missing
+        createdAt: p.createdAt ?? p.date, // fallback if createdAt is missing
+    }));
 
     return (
         <div className="flex flex-col min-h-screen bg-beige">
