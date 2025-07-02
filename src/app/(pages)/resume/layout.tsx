@@ -14,7 +14,7 @@ export const metadata: Metadata = {
         type: "profile",
         images: [
             {
-                url: "/images/brandon-korous-profile.jpg", 
+                url: "/images/brandon-korous-profile.jpg",
                 width: 1200,
                 height: 630,
                 alt: "Brandon Korous - Technology Executive",
@@ -26,12 +26,12 @@ export const metadata: Metadata = {
         title: "Brandon Korous - Resume | Technology Executive",
         description:
             "Strategic and results-driven Technology Executive with 15+ years of leadership experience in enterprise architecture, cloud transformation, DevOps/DevSecOps, software development, and AI-powered innovation.",
-        images: ["/images/brandon-korous-profile.jpg"], 
-        creator: "@brandonkorous", 
+        images: ["/images/brandon-korous-profile.jpg"],
+        creator: "@brandonkorous",
     },
 }
 
-const ResumeLayout = ({ children }: {children: React.ReactNode}) => {
+const ResumeLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <>
             <script

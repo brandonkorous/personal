@@ -1,45 +1,42 @@
 "use client"
+import Logo from "@/components/logo"
 import { faLinkedin } from "@awesome.me/kit-654a0ecbfd/icons/classic/brands"
-import { faCalendar, faDownload, faEnvelope, faMessage, faPhone } from "@awesome.me/kit-654a0ecbfd/icons/classic/solid"
+import { faEnvelope, faPhone } from "@awesome.me/kit-654a0ecbfd/icons/classic/solid"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "next/link"
 
 export const ResumePage = () => {
+
+
     return (
-        <main className="bg-white pt-16">
+        <main className="bg-white py-6 print:py-0">
             {/* Hero Section */}
             <section className="relative">
-                <div className="max-w-4xl mx-auto">
-                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                <div className="max-w-5xl mx-auto">
+                    <div className="flex flex-row justify-between items-start md:items-center gap-6">
                         <div>
-                            <h1 className="text-4xl md:text-5xl text-neutral">Brandon Korous</h1>
+                            <h1 className="text-4xl md:text-5xl text-neutral pt-2">Brandon Korous</h1>
                             <p className="text-xl text-neutral/80">Technology Leader | Enterprise Architect | Cloud & AI Innovator</p>
                         </div>
-                        <div className="flex flex-col sm:flex-row gap-3 print:hidden">
-                            <button className="btn btn-primary">
-                                <FontAwesomeIcon icon={faDownload} className="mr-2" fixedWidth />
-                                Download PDF
-                            </button>
-                            <button className="btn btn-secondary btn-outline">
-                                Print Resume
-                            </button>
+                        <div className="flex items-center gap-4">
+                            <Logo showText={false} showMoto={true} width={80} height={80} />
                         </div>
                     </div>
 
                     <div className="flex flex-wrap gap-4 mb-8">
                         <Link href="mailto:me@brandonkorous.com" className="flex items-center text-neutral/80 hover:text-primary">
-                            <FontAwesomeIcon icon={faEnvelope} className="mr-2" fixedWidth />
+                            <FontAwesomeIcon icon={faEnvelope} className="mr-2 text-secondary" fixedWidth />
                             me@brandonkorous.com
                         </Link>
                         <Link href="tel:+15596233290" className="flex items-center text-neutral/80 hover:text-primary">
-                            <FontAwesomeIcon icon={faPhone} className="mr-2" fixedWidth />
+                            <FontAwesomeIcon icon={faPhone} className="mr-2 text-secondary" fixedWidth />
                             559.623.3290
                         </Link>
                         <Link
                             href="https://linkedin.com/in/brandonkorous"
                             className="flex items-center text-neutral/80 hover:text-primary"
                         >
-                            <FontAwesomeIcon icon={faLinkedin} className="mr-2" fixedWidth />
+                            <FontAwesomeIcon icon={faLinkedin} className="mr-2 text-secondary" fixedWidth />
                             /in/brandonkorous
                         </Link>
                     </div>
@@ -179,7 +176,7 @@ export const ResumePage = () => {
 
                         {/* Job 1 */}
                         <div className="mb-10">
-                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
+                            <div className="flex flex-row justify-between items-start md:items-center mb-3">
                                 <div>
                                     <h5 className="text-xl  text-neutral">Enterprise Integration Systems Manager</h5>
                                     <p className="text-lg text-neutral/80">Berkshire Hathaway Homestate Companies – Sacramento, CA</p>
@@ -289,7 +286,7 @@ export const ResumePage = () => {
                         </div>
 
                         <div className="mb-10">
-                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
+                            <div className="flex flex-row justify-between items-start md:items-center mb-3">
                                 <div>
                                     <h5 className="text-xl  text-neutral">
                                         Architecture Manager, DevOps Manager, & Platform Engineering Manager
@@ -473,7 +470,7 @@ export const ResumePage = () => {
                             </div>
                         </div>
                         <div className="mb-10">
-                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
+                            <div className="flex flex-row justify-between items-start md:items-center mb-3">
                                 <div>
                                     <h5 className="text-xl  text-neutral">Enterprise Architect</h5>
                                     <p className="text-lg text-neutral/80">Berkshire Hathaway Homestate Companies – Sacramento, CA</p>
@@ -542,7 +539,7 @@ export const ResumePage = () => {
                         </div>
 
                         <div className="mb-10">
-                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
+                            <div className="flex flex-row justify-between items-start md:items-center mb-3">
                                 <div>
                                     <h5 className="text-xl  text-neutral">Head of Information Technology</h5>
                                     <p className="text-lg text-neutral/80">
@@ -604,7 +601,7 @@ export const ResumePage = () => {
                         </div>
 
                         <div className="mb-10">
-                            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-3">
+                            <div className="flex flex-row justify-between items-start md:items-center mb-3">
                                 <div>
                                     <h5 className="text-xl  text-neutral">Chief Technology Officer (CTO)</h5>
                                     <p className="text-lg text-neutral/80">GMO Developing – Visalia, CA</p>
@@ -665,45 +662,45 @@ export const ResumePage = () => {
 
                     <section className="mb-12">
                         <h2 className="text-2xl text-neutral mb-4">Tech Stack</h2>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-2 gap-4">
                             <div>
-                                <h5 className=" text-secondary">Cloud Platforms</h5>
+                                <h5 className="text-lg text-secondary">Cloud Platforms</h5>
                                 <p>Azure, AWS, DigitalOcean, Cloudflare, Salesforce, Snowflake, Linode, Wasabi, HPE GreenLake, Heroku, </p>
                             </div>
                             <div>
-                                <h5 className=" text-secondary">DevOps & CI/CD</h5>
+                                <h5 className="text-lg text-secondary">DevOps & CI/CD</h5>
                                 <p>Azure DevOps, GitHub Actions, Jenkins, Terraform, PowerShell, Python, YAML</p>
                             </div>
                             <div>
-                                <h5 className=" text-secondary">Application Development</h5>
+                                <h5 className="text-lg text-secondary">Application Development</h5>
                                 <p>.Net, C#, JavaScript, Python, WinForms, NextJS, React, Express, NodeJS, C++, Java, Objective-C, Swift, GraphQL, REST, SOAP</p>
                             </div>
                             <div>
-                                <h5 className=" text-secondary">Design</h5>
+                                <h5 className="text-lg text-secondary">Design</h5>
                                 <p>Bootstrap, DaisyUI, TailwindCSS, MaterialUI, SCSS, FontAwesome, Lucid, ChartJS, </p>
                             </div>
                             <div>
-                                <h5 className=" text-secondary">AI & Automation</h5>
+                                <h5 className="text-lg text-secondary">AI & Automation</h5>
                                 <p>OpenAI, Azure OpenAI, Azure Cognitive Services, Anthropic, Google AI, Grok AI, Claude AI, Intelligent Process Automation, Zapier, N8N, Power Automate, Make</p>
                             </div>
                             <div>
-                                <h5 className=" text-secondary">Security & Compliance</h5>
+                                <h5 className="text-lg text-secondary">Security & Compliance</h5>
                                 <p>OAuth2, JWT, Zero Trust Architecture, DevSecOps, MFA, HIPAA, PCI DSS, DOJ, NYDFS, CCPA, GDPR</p>
                             </div>
                             <div>
-                                <h5 className=" text-secondary">Data & Analytics</h5>
+                                <h5 className="text-lg text-secondary">Data & Analytics</h5>
                                 <p>SQL Server, Snowflake, MySQL, PostgreSQL, SSRS, PowerBI, Supabase </p>
                             </div>
                             <div>
-                                <h5 className=" text-secondary">Monitoring & Observability</h5>
+                                <h5 className="text-lg text-secondary">Monitoring & Observability</h5>
                                 <p>Splunk, Dynatrace, Graphana, Azure Monitor, Snyk, LogRocket, Sentry, Solarwinds, Clarity</p>
                             </div>
                             <div>
-                                <h5 className=" text-secondary">Collaboration Tools</h5>
+                                <h5 className="text-lg text-secondary">Collaboration Tools</h5>
                                 <p>Microsoft Teams, Salesforce, Zoom, Slack, GSuite, Figma, Miro, monday.com, notion, and more.</p>
                             </div>
                             <div>
-                                <h5 className=" text-secondary">Project & Process Frameworks</h5>
+                                <h5 className="text-lg text-secondary">Project & Process Frameworks</h5>
                                 <p>Agile, Scrum, Kanban, Lean, Six Sigma, Critical, Architecture Review Boards, Hackathons, Compliance</p>
                             </div>
                         </div>
@@ -711,35 +708,12 @@ export const ResumePage = () => {
 
                     <section className="mb-12">
                         <h2 className="text-2xl text-neutral mb-4">Education</h2>
-                        <h5 className="text-secondary">
+                        <h5 className="text-lg text-secondary">
                             Bachelor of Science in Management Information Systems & Business Administration
                         </h5>
                         <p className="text-neutral/80">Utah State University – Logan, UT</p>
                     </section>
 
-                </div>
-            </section>
-            <section className="bg-secondary py-16">
-                <div className="container max-w-6xl">
-                    <div className="card bg-white border-4 border-primary shadow-xl">
-                        <div className="card-body text-center">
-                            <h2 className="font-coiny text-4xl text-neutral-500">Let&apos;s Connect</h2>
-                            <p className="text-xl text-neutral-500 max-w-2xl mx-auto">
-                                Interested in discussing how my expereience can benefit your organization?  Let&apos;s connect and discuss how we can work together.
-                            </p>
-                            <p className="font-bold text-neutral-500">Schedule a meeting or send me a message to get started.</p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                                <Link href="/contact" className="btn btn-primary btn-lg rounded-full">
-                                    <FontAwesomeIcon icon={faMessage} />
-                                    Contact Me
-                                </Link>
-                                <Link href="https://calendly.com/brandonkorous/30min" className="btn btn-secondary btn-lg btn-outline rounded-full" target="_blank">
-                                    <FontAwesomeIcon icon={faCalendar} />
-                                    Setup a Meeting
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
         </main>
