@@ -45,7 +45,6 @@ const Header = () => {
                             <Link href="/services" className={`border-b-4 ${isActive("/services")}`}>Services</Link>
                             <Link href="/portfolio" className={`border-b-4 ${isActive("/portfolio")}`}>Portfolio</Link>
                             <Link href="/blog" className={`border-b-4 ${isActive("/blog")}`}>Blog</Link>
-                            <Link href="/contact" className={`border-b-4 ${isActive("/contact")}`}>Contact</Link>
                         </nav>
                         <nav>
                             <Link href="/contact" className="btn btn-primary btn-lg rounded-full font-normal text-nowrap pt-1">

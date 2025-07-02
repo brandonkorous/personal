@@ -28,6 +28,12 @@ const nextConfig: NextConfig = {
                 port: '',
                 pathname: "/600x400/**",
                 search: '',
+            },
+            {
+                protocol: "https",
+                hostname: "wize.works",
+                port: '',
+                pathname: "/**",
             }
         ]
     }

@@ -6,7 +6,7 @@ import Image from "next/image";
 import { formatDate } from "@/lib/utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faClock, faTag } from "@awesome.me/kit-654a0ecbfd/icons/classic/solid";
-import AuthorCard from "./aurthor-card";
+//import AuthorCard from "./aurthor-card";
 import ShareCard from "./share-card";
 import ArticleBlurbCard from "./article-blurb-card";
 import { ArticleBlurb, BlogArticleProps } from "../../types";
@@ -15,7 +15,6 @@ export const Article = ({
     article,
     relatedPosts = [],
 }: BlogArticleProps) => {
-    console.log(article);
     return (
         <main className="flex-1">
             {/* Hero Section */}
@@ -32,10 +31,10 @@ export const Article = ({
                         {article.title}
                     </h1>
 
-                    <div className="flex items-center justify-center gap-6 text-sm text-neutral/60 mb-8">
+                    <div className="flex items-center justify-center gap-6 text-neutral/70 mb-8">
                         <span className="flex items-center">
                             <FontAwesomeIcon icon={faCalendar} className="mr-1" fixedWidth />
-                            {formatDate(article.date)}
+                            {formatDate(article.createdAt)}
                         </span>
                         {article.readTime && (
                             <span className="flex items-center">
@@ -52,7 +51,7 @@ export const Article = ({
                             ))}
                     </div>
 
-                    <div className="relative h-[400px] w-full overflow-hidden rounded-xl mb-12">
+                    <div className="relative h-[400px] w-full overflow-hidden rounded-xl">
                         <Image
                             src={article.image || "https://placehold.co/600x400"}
                             alt={article.title}
@@ -70,10 +69,7 @@ export const Article = ({
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col lg:flex-row gap-8">
                         <div className="lg:w-2/3">
-                            <div
-                                className="prose prose-lg max-w-none text-neutral/90"
-                                dangerouslySetInnerHTML={{ __html: article.content }}
-                            />
+                            <div className="lg:w-2/3" dangerouslySetInnerHTML={{__html: article.body}} />
 
                             {article.tags && article.tags.length > 0 && (
                                 <div className="flex items-center justify-between border-t border-b border-neutral/10 py-6 my-8">
@@ -94,7 +90,7 @@ export const Article = ({
 
                         <div className="lg:w-1/3 space-y-8">
                             {/* Author Card */}
-                            <AuthorCard author={article.author} />
+                            {/* <AuthorCard author={article.author} /> */}
                             {/* Share Card */}
                             <ShareCard title={article.title} />
                         </div>

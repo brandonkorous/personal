@@ -19,7 +19,7 @@ export default function Logo({
     return (
         <Link href={href} className="group">
             <div className={cn("flex items-center gap-2", className)}>
-                <Image src="/images/logo-large.svg" alt={SITE_INFO.Name} width={40} height={40} />
+                <Image src="/images/logo-large.png" alt={SITE_INFO.Name} width={40} height={40} />
                 {showText && <span className={cn("font-coiny text-2x mt-1 group-hover:underline", className)}>{textContent}</span>}
             </div>
         </Link>
