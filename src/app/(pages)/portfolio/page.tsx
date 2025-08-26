@@ -1,4 +1,6 @@
 import Hero from '@/components/hero';
+import { ParallaxSection } from '@/components/animation/parallax-section';
+import { Reveal } from '@/components/animation/reveal';
 import { faArrowRight, faEnvelope, faFaceThinking, faFilter } from '@awesome.me/kit-654a0ecbfd/icons/classic/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Metadata } from 'next';
@@ -17,7 +19,7 @@ export default function Portfolio() {
 
         <>
             <main className="flex-1">
-                <Hero bottomLeftBlobColor="bg-secondary/20" bottomRightBlobColor="bg-primary/20" className="">
+                <Hero animated bottomLeftBlobColor="bg-secondary/20" bottomRightBlobColor="bg-primary/20" className="">
                     <div className="gap-10 lg:gap-20 items-center max-w-4xl mx-auto">
                         <div className="flex flex-col space-y-8 text-neutral-500 text-center">
                             <div className="badge badge-xl bg-white text-secondary font-bold text-xl py-5 shadow-lg border-none mx-auto">
@@ -57,9 +59,9 @@ export default function Portfolio() {
                     </div>
                 </section>
 
-                <section className="bg-white py-16">
+                <ParallaxSection className="bg-white py-16">
                     <div className="container text-neutral">
-                        <h2 className="mb-8">Featured Project</h2>
+                        <Reveal><h2 className="mb-8">Featured Project</h2></Reveal>
 
                         {PROJECTS.filter(project => project.featured).map((project: Project) => (
                             <article
@@ -77,7 +79,7 @@ export default function Portfolio() {
                                     <div className="absolute top-4 left-4">
                                     </div>
                                 </div>
-                                <div className="p-6">
+                                <Reveal className="p-6 block">
                                     <div className="flex flex-wrap gap-2 items-center">
                                         <div className="badge badge-accent font-bold">{project.category}</div>
                                         <div className="badge badge-primary">Featured</div>
@@ -103,18 +105,18 @@ export default function Portfolio() {
                                             className="btn btn-primary btn-sm rounded-full"
                                         >Visit Site <FontAwesomeIcon icon={faArrowRight} className="ml-1 h-4 w-4" /></Link>
                                     </div>
-                                </div>
+                                </Reveal>
                             </article>
                         ))}
                     </div>
-                </section>
+                </ParallaxSection>
 
                 <section className="py-16 bg-base">
                     <div className="container">
-                        <h2 className="text-neutral mb-8">Recent Projects</h2>
+                        <Reveal><h2 className="text-neutral mb-8">Recent Projects</h2></Reveal>
 
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {PROJECTS.filter(project => !project.featured).map((project: Project) => (
+                            {PROJECTS.filter(project => !project.featured).map((project: Project, i) => (
                                 <article
                                     key={project.id}
                                     className="bg-white rounded-xl overflow-hidden shadow-md transition-transform hover:-translate-y-2"
@@ -131,7 +133,7 @@ export default function Portfolio() {
                                             <span className="badge badge-white">{project.category}</span>
                                         </div>
                                     </div>
-                                    <div className="p-6">
+                                    <Reveal delay={0.05 * i} className="p-6 block">
                                         <h3 className="text-neutral mb-2">{project.title}</h3>
                                         <p className="text-neutral mb-4">{project.description}</p>
                                         {project.metrics && (
@@ -154,7 +156,7 @@ export default function Portfolio() {
                                             Visit Site
                                             <FontAwesomeIcon icon={faArrowRight} className="ml-1 h-4 w-4" />
                                         </Link>
-                                    </div>
+                                    </Reveal>
                                 </article>
                             ))}
                         </div>
