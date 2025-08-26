@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { BLOG_POSTS } from './(pages)/blog/data'
 import { SITE_INFO } from '../data/site'
+import { SERVICES } from '../data/services'
 
 // Helper to build a full URL
 const base = SITE_INFO.Url?.replace(/\/$/, '') || 'https://brandonkorous.com'
@@ -42,6 +43,13 @@ const sitemap = (): MetadataRoute.Sitemap => {
     return [
         ...staticEntries,
         ...blogEntries,
+        // Individual service detail pages
+        ...SERVICES.map(s => ({
+            url: `${base}/services/${s.slug}`,
+            lastModified: now,
+            changeFrequency: 'monthly' as const,
+            priority: 0.5,
+        })),
     ]
 }
 
