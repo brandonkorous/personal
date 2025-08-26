@@ -4,14 +4,15 @@ import { getServiceBySlug, SERVICES } from '@/data/services'
 import Link from 'next/link'
 import { Metadata } from 'next'
 
-interface Params { slug: string }
+interface RouteParams { slug: string }
 
 export function generateStaticParams() {
     return SERVICES.map(s => ({ slug: s.slug }))
 }
 
-export function generateMetadata({ params }: { params: Params }): Metadata {
-    const service = getServiceBySlug(params.slug)
+export async function generateMetadata({ params }: { params: Promise<RouteParams> }): Promise<Metadata> {
+    const { slug } = await params
+    const service = getServiceBySlug(slug)
     if (!service) return {}
     return {
         title: `${service.title} | Services`,
@@ -20,8 +21,9 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
     }
 }
 
-export default function ServiceDetailPage({ params }: { params: Params }) {
-    const service = getServiceBySlug(params.slug)
+export default async function ServiceDetailPage({ params }: { params: Promise<RouteParams> }) {
+    const { slug } = await params
+    const service = getServiceBySlug(slug)
     if (!service) return notFound()
 
     return (
