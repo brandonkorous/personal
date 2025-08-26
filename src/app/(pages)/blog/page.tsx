@@ -1,4 +1,6 @@
 import Hero from "@/components/hero";
+import { ParallaxSection } from "@/components/animation/parallax-section";
+import { Reveal } from "@/components/animation/reveal";
 import { BLOG_POSTS, CATEGORIES } from "./data";
 import Link from "next/link";
 import Article from "@/components/article";
@@ -13,7 +15,7 @@ const Blog = async () => {
     console.log(featuredPosts.length, "featuredPosts");
     return (
         <>
-            <Hero topLeftBlobColor="bg-secondary/20" bottomRightBlobColor="bg-primary/20" className="">
+            <Hero animated topLeftBlobColor="bg-secondary/20" bottomRightBlobColor="bg-primary/20" className="">
                 <div className="gap-10 lg:gap-20 items-center max-w-4xl mx-auto">
                     <div className="flex flex-col space-y-8 text-neutral-500 text-center">
                         <div className="badge badge-xl bg-white text-secondary font-bold text-xl py-5 shadow-lg border-none mx-auto">
@@ -39,57 +41,63 @@ const Blog = async () => {
                     </div>
                 </div>
             </Hero>
-            <section className="py-8 bg-white border-y border-gray-200">
+            <ParallaxSection className="py-8 bg-white border-y border-gray-200">
                 <div className="container">
                     <div className="flex flex-wrap justify-center gap-3">
-                        {CATEGORIES.map((category) => (
-                            <Link
-                                key={category.slug}
-                                href={`/blog/category/${category.slug}`}
-                                className={`btn rounded-full ${category.slug === "all"
-                                    ? "btn-primary"
-                                    : "btn-secondary btn-outline"
-                                    }`}
-                            >
-                                {category.name}
-                            </Link>
+                        {CATEGORIES.map((category, i) => (
+                            <Reveal key={category.slug} delay={i * 0.05} y={24} className="inline-block">
+                                <Link
+                                    href={`/blog/category/${category.slug}`}
+                                    className={`btn rounded-full ${category.slug === "all"
+                                        ? "btn-primary"
+                                        : "btn-secondary btn-outline"
+                                        }`}
+                                >
+                                    {category.name}
+                                </Link>
+                            </Reveal>
                         ))}
                     </div>
                 </div>
-            </section>
+            </ParallaxSection>
 
             {/* Featured Post */}
-            <section className="py-16 bg-white">
+            <ParallaxSection className="py-16 bg-white">
                 <div className="container">
-                    <h2 className="text-neutral mb-8">Featured Post</h2>
-                    {featuredPosts.map((featuredPost: ArticleBlurb) => (
-                        <FeaturedArticle key={featuredPost.id} {...featuredPost} />
-
+                    <Reveal><h2 className="text-neutral mb-8">Featured Post</h2></Reveal>
+                    {featuredPosts.map((featuredPost: ArticleBlurb, i: number) => (
+                        <Reveal key={featuredPost.id} delay={i * 0.08} y={60}>
+                            <FeaturedArticle  {...featuredPost} />
+                        </Reveal>
                     ))}
                 </div>
-            </section>
+            </ParallaxSection>
 
-            <section className="py-16 bg-beige">
+            <ParallaxSection className="py-16 bg-beige">
                 <div className="container">
-                    <h2 className="text-neutral mb-8">Latest Articles</h2>
+                    <Reveal><h2 className="text-neutral mb-8">Latest Articles</h2></Reveal>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {BLOG_POSTS.filter(blog => !blog.featured).map((blog) => (
-                            <Article key={blog.id} {...blog} />
+                        {BLOG_POSTS.filter(blog => !blog.featured).map((blog, i) => (
+                            <Reveal key={blog.id} delay={i * 0.05} y={50}>
+                                <Article  {...blog} />
+                            </Reveal>
                         ))}
                     </div>
 
                     <div className="mt-12 text-center">
-                        <Link href="/" className="btn btn-secondary btn-lg rounded-full">
-                            Load More Articles
-                        </Link>
+                        <Reveal y={24} delay={0.3}>
+                            <Link href="/" className="btn btn-secondary btn-lg rounded-full">
+                                Load More Articles
+                            </Link>
+                        </Reveal>
                     </div>
                 </div>
-            </section>
+            </ParallaxSection>
 
-            <section className="py-16 bg-white">
+            <ParallaxSection className="py-16 bg-white">
                 <div className="container">
-                    <div className="max-w-5xl mx-auto bg-secondary rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+                    <Reveal className="max-w-5xl mx-auto bg-secondary rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
                         <div className="relative z-10">
                             <h2 className="text-white mb-4">Never Miss an Update</h2>
                             <p className="text-white mb-8 max-w-xl mx-auto text-xl">
@@ -104,9 +112,9 @@ const Blog = async () => {
 
                             <p className="mt-4 text-xs text-white/60">We respect your privacy. Unsubscribe at any time.</p>
                         </div>
-                    </div>
+                    </Reveal>
                 </div>
-            </section>
+            </ParallaxSection>
         </>
     );
 };
