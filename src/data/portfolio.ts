@@ -1,79 +1,93 @@
 export const PROJECTS = [
     {
         id: 1,
-        featured: false,
-        title: "TechInnovate Platform Redesign",
-        description:
-            "Complete redesign and modernization of a legacy enterprise platform, improving user experience and system performance.",
-        category: "Tech Expertise",
-        image: "https://placehold.co/700x500",
-        slug: "techinnovate-platform-redesign",
+        featured: true,
+        title: 'helpNINJA – AI Customer Support Platform',
+        description: 'AI-powered support platform that reduces resolution time by 80%, achieves 98% first-contact resolution, and enables <15 minute deployment with white‑label capability and 50+ integrations.',
+        category: 'AI / SaaS',
+        image: 'https://helpninja.ai/lovable-uploads/30c0114d-f99f-426c-a3f7-9da5ddd59f5b.png',
+        slug: 'helpninja-ai-support-platform',
+        url: 'https://helpninja.ai',
+        metrics: ['80% faster resolution', '98% first-contact resolution', '1000+ teams', '<15 min setup'],
+        role: 'Architecture, full‑stack engineering, product strategy',
+        stack: ['Next.js', 'TypeScript', 'Edge Functions', 'AI/LLM', 'PostgreSQL', 'Vector Search', 'Tailwind'],
     },
     {
         id: 2,
         featured: false,
-        title: "HealthCare System Modernization",
-        description:
-            "Digital transformation of a healthcare provider's patient management system, automating workflows and improving data accessibility.",
-        category: "Innovation & Modernization",
-        image: "https://placehold.co/600x400",
-        slug: "healthcare-system-modernization",
+        title: 'kanNINJA – AI Recruitment & Talent Platform',
+        description: 'Intelligent hiring platform delivering AI candidate matching, workflow automation, analytics and collaboration to shrink time‑to‑hire and raise talent quality.',
+        category: 'AI / HR Tech',
+        image: 'https://kanninja.com/favicon.ico',
+        slug: 'kanninja-talent-platform',
+        url: 'https://kanninja.com',
+        metrics: ['Reduced time-to-hire', 'AI candidate matching', 'Workflow automation'],
+        role: 'Technical direction, core platform build, data modeling',
+        stack: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'AI Matching', 'Tailwind'],
     },
     {
         id: 3,
         featured: false,
-        title: "Manufacturing Workflow Automation",
-        description:
-            "Implementation of intelligent automation solutions that reduced manual processes by 75% and increased production efficiency by 40%.",
-        category: "Automation",
-        image: "https://placehold.co/600x400",
-        slug: "manufacturing-workflow-automation",
+        title: 'JobSight Pro – Construction Intelligence',
+        description: 'Enterprise-grade construction management replacing 10+ disparate tools with AI voice logs (95% accuracy), financial automation, BI dashboards & predictive analytics.',
+        category: 'Enterprise SaaS',
+        image: 'https://jobsight.co/images/hero-portrait-dashboard.png',
+        slug: 'jobsight-construction-platform',
+        url: 'https://jobsight.co',
+        metrics: ['95% AI voice accuracy', '40% faster payments', '10+ tools replaced', '30 day ROI'],
+        role: 'Platform modernization, AI integration, performance engineering',
+        stack: ['Next.js', 'TypeScript', 'Node.js', 'AI/LLM', 'Analytics', 'Cloud Infrastructure'],
     },
     {
         id: 4,
         featured: false,
-        title: "FinTech App Transformation",
-        description:
-            "Modernization of a financial services application, implementing cutting-edge security features and intuitive user interfaces.",
-        category: "Innovation & Modernization",
-        image: "https://placehold.co/600x400",
-        slug: "fintech-app-transformation",
+        title: 'JobSight Technologies – Multi‑Product Portfolio',
+        description: 'Corporate technology umbrella site showcasing product suite (kanNINJA, JobSight) with messaging architecture, product positioning and conversion focused design.',
+        category: 'Brand / Platform',
+        image: 'https://jobsighttechnologies.com/favicon.ico',
+        slug: 'jobsight-technologies-site',
+        url: 'https://jobsighttechnologies.com',
+        metrics: ['Multi-product messaging', '99.9% uptime positioning', 'Growth-focused IA'],
+        role: 'Brand strategy, content architecture, front-end build',
+        stack: ['Next.js', 'TypeScript', 'Static Optimization', 'Tailwind'],
     },
     {
         id: 5,
         featured: false,
-        title: "E-commerce Platform Development",
-        description:
-            "Custom e-commerce solution with advanced inventory management and seamless payment processing integration.",
-        category: "Tech Expertise",
-        image: "https://placehold.co/600x400",
-        slug: "ecommerce-platform-development",
+        title: 'Gillett Diesel Service – E‑commerce Modernization',
+        description: 'Modern diesel parts & service ecommerce ecosystem with multi-brand catalog structure, performance enhancements, customer education content and conversion UX.',
+        category: 'E-commerce',
+        image: 'https://gillettdiesel.com/cdn/shop/files/Alliant_Power_Logo.png?v=1724359399&width=300',
+        slug: 'gillett-diesel-modernization',
+        url: 'https://gillettdiesel.com',
+        metrics: ['Same-day shipping workflows', 'Expanded brand catalog', 'Optimized product discovery'],
+        role: 'Architecture guidance, performance tuning, UX improvements',
+        stack: ['Shopify', 'Liquid', 'Custom Apps', 'Edge Caching'],
     },
-    {
-        id: 6,
-        featured: false,
-        title: "Supply Chain Automation System",
-        description:
-            "End-to-end automation solution for a global logistics company that streamlined operations and reduced processing time by 60%.",
-        category: "Automation",
-        image: "https://placehold.co/600x400",
-        slug: "supply-chain-automation",
-    },
-    {
-        id: 7,
-        featured: true,
-        title: "Enterprise Workflow Automation",
-        description:
-            "A comprehensive automation project for a Fortune 500 company, implementing intelligent workflows, RPA solutions, and AI-powered processes that reduced manual tasks by 85% and improved operational efficiency by 04%.",
-        category: "Automation",
-        image: "https://placehold.co/700x500",
-        slug: "enterprise-workflow-automation",
-    },
-];
+]
 
 export const CATEGORIES = [
-    { name: "All", slug: "all" },
-    { name: "Tech Expertise", slug: "tech-expertise" },
-    { name: "Innovation & Modernization", slug: "innovation-modernization" },
-    { name: "Automation", slug: "automation" },
-];
+    { name: 'All', slug: 'all' },
+    { name: 'AI / SaaS', slug: 'ai-saas' },
+    { name: 'AI / HR Tech', slug: 'ai-hr-tech' },
+    { name: 'Enterprise SaaS', slug: 'enterprise-saas' },
+    { name: 'Brand / Platform', slug: 'brand-platform' },
+    { name: 'E-commerce', slug: 'ecommerce' },
+]
+
+export interface Project {
+    id: number
+    featured: boolean
+    title: string
+    description: string
+    category: string
+    image: string
+    slug: string
+    url?: string
+    metrics?: string[]
+    role?: string
+    stack?: string[]
+}
+
+// Helper for runtime usage when needed
+export type { Project as ProjectType }

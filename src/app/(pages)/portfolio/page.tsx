@@ -2,14 +2,14 @@ import Hero from '@/components/hero';
 import { faArrowRight, faEnvelope, faFaceThinking, faFilter } from '@awesome.me/kit-654a0ecbfd/icons/classic/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Metadata } from 'next';
-import { CATEGORIES, PROJECTS } from '@/data/portfolio';
+import { CATEGORIES, PROJECTS, type Project } from '@/data/portfolio';
 import Image from 'next/image';
 import Link from 'next/link';
 import Testimonial from '@/components/testimonial';
 
 export const metadata: Metadata = {
-    title: 'Portfolio | Your Name',
-    description: 'A showcase of my projects and work experience.',
+    title: 'Portfolio | Brandon Korous',
+    description: 'Select product, platform, and modernization work: AI SaaS, recruitment tech, construction intelligence, e-commerce, and brand platform builds.',
 };
 
 export default function Portfolio() {
@@ -61,7 +61,7 @@ export default function Portfolio() {
                     <div className="container text-neutral">
                         <h2 className="mb-8">Featured Project</h2>
 
-                        {PROJECTS.filter(project => project.featured).map((project) => (
+                        {PROJECTS.filter(project => project.featured).map((project: Project) => (
                             <article
                                 key={project.id}
                                 className="grid md:grid-cols-2 gap-8 items-center"
@@ -78,19 +78,31 @@ export default function Portfolio() {
                                     </div>
                                 </div>
                                 <div className="p-6">
-                                    <div className="badge badge-accent font-bold">
-                                        {project.category}
+                                    <div className="flex flex-wrap gap-2 items-center">
+                                        <div className="badge badge-accent font-bold">{project.category}</div>
+                                        <div className="badge badge-primary">Featured</div>
                                     </div>
-                                    <div className="badge badge-warning ml-2">sample</div>
                                     <h3 className="mt-4">{project.title}</h3>
                                     <p className="mb-4">{project.description}</p>
-                                    <Link
-                                        href={`/portfolio/${project.slug}`}
-                                        className="text-primary font-medium"
-                                    >
-                                        View Project
-                                        <FontAwesomeIcon icon={faArrowRight} className="ml-1 h-4 w-4" />
-                                    </Link>
+                                    {project.metrics && (
+                                        <ul className="flex flex-wrap gap-2 mb-4">
+                                            {project.metrics.map((m: string) => (
+                                                <li key={m} className="badge badge-secondary badge-outline">{m}</li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                    <div className="flex flex-wrap gap-2 mb-6">
+                                        {project.stack?.map((tech: string) => (
+                                            <span key={tech} className="badge badge-outline">{tech}</span>
+                                        ))}
+                                    </div>
+                                    <div className="flex gap-4 flex-wrap">
+                                        <Link
+                                            href={project.url || '#'}
+                                            target="_blank"
+                                            className="btn btn-primary btn-sm rounded-full"
+                                        >Visit Site <FontAwesomeIcon icon={faArrowRight} className="ml-1 h-4 w-4" /></Link>
+                                    </div>
                                 </div>
                             </article>
                         ))}
@@ -102,7 +114,7 @@ export default function Portfolio() {
                         <h2 className="text-neutral mb-8">Recent Projects</h2>
 
                         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {PROJECTS.filter(project => !project.featured).map((project) => (
+                            {PROJECTS.filter(project => !project.featured).map((project: Project) => (
                                 <article
                                     key={project.id}
                                     className="bg-white rounded-xl overflow-hidden shadow-md transition-transform hover:-translate-y-2"
@@ -115,21 +127,31 @@ export default function Portfolio() {
                                             height={400}
                                             className="w-full h-full object-cover"
                                         />
-                                        <div className="absolute top-4 left-4">
-                                            <span className="badge badge-white">
-                                                {project.category}
-                                            </span>
-                                            <div className="badge badge-warning ml-2">sample</div>
+                                        <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                                            <span className="badge badge-white">{project.category}</span>
                                         </div>
                                     </div>
                                     <div className="p-6">
                                         <h3 className="text-neutral mb-2">{project.title}</h3>
                                         <p className="text-neutral mb-4">{project.description}</p>
+                                        {project.metrics && (
+                                            <ul className="flex flex-wrap gap-2 mb-4">
+                                                {project.metrics.map((m: string) => (
+                                                    <li key={m} className="badge badge-secondary badge-outline">{m}</li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                        <div className="flex flex-wrap gap-2 mb-4">
+                                            {project.stack?.map((tech: string) => (
+                                                <span key={tech} className="badge badge-outline">{tech}</span>
+                                            ))}
+                                        </div>
                                         <Link
-                                            href={`/portfolio/${project.slug}`}
+                                            href={project.url || '#'}
+                                            target="_blank"
                                             className="inline-flex items-center text-primary font-medium hover:underline"
                                         >
-                                            View Project
+                                            Visit Site
                                             <FontAwesomeIcon icon={faArrowRight} className="ml-1 h-4 w-4" />
                                         </Link>
                                     </div>
