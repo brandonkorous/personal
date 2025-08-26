@@ -12,12 +12,12 @@
         "@tailwindcss/typography": "^0.5.16",
         "daisyui": "^5.0.6",
         "dotenv": "^16.4.7",
+        "framer-motion": "^11.0.0",
         "next": "15.2.3",
+        "puppeteer": "^23.11.1",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
-        "resend": "^4.1.2",
-        "framer-motion": "^11.0.0",
-        "playwright": "^1.47.0"
+        "resend": "^4.1.2"
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",

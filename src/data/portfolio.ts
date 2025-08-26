@@ -64,6 +64,19 @@ export const PROJECTS = [
         role: 'Architecture guidance, performance tuning, UX improvements',
         stack: ['Shopify', 'Liquid', 'Custom Apps', 'Edge Caching'],
     },
+    {
+        id: 6,
+        featured: true,
+        title: 'Personal Brand Website – Modern Portfolio Platform',
+        description: 'Comprehensive personal brand website showcasing portfolio, services, and capabilities. Features responsive design, automated screenshot capture, and modern animations for enhanced user experience.',
+        category: 'Brand / Platform',
+        image: '/images/landing-desktop.png',
+        slug: 'personal-brand-website',
+        url: 'https://brandonkorous.com',
+        metrics: ['Responsive design', 'Automated screenshots', 'Modern animations', 'SEO optimized'],
+        role: 'Full‑stack development, design system, UX/UI design',
+        stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Puppeteer', 'DaisyUI'],
+    },
 ]
 
 export const CATEGORIES = [

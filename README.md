@@ -76,6 +76,20 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+### Screenshot Generation
+
+This project includes an automated screenshot capture system for portfolio use. To generate screenshots:
+
+```bash
+# Start the development server
+npm run dev
+
+# In another terminal, generate screenshots
+./scripts/generate-screenshots.sh
+```
+
+Screenshots will be saved to `public/images/` and can be used in the portfolio. See [SCREENSHOTS.md](SCREENSHOTS.md) for detailed documentation.
+
 ### Building for Production
 
 To build the application for production, run:
