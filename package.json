@@ -6,7 +6,8 @@
         "dev": "next dev --turbopack",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint"
+        "lint": "next lint",
+        "capture:screens": "tsx scripts/capture-screenshots.ts"
     },
     "dependencies": {
         "@awesome.me/kit-654a0ecbfd": "^1.0.4",
@@ -20,7 +21,8 @@
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "resend": "^4.1.2",
-        "framer-motion": "^11.0.0"
+        "framer-motion": "^11.0.0",
+        "puppeteer": "^23.6.0"
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",
