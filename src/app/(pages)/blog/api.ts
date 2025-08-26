@@ -9,42 +9,42 @@ export const getFeaturedBlogPosts = async () => {
     try {
         const requestBody = {
             query: `
-            query GetContents($filter: String, $featured: Boolean) {
-                contents(filter: $filter, featured: $featured) {
-                    totalCount
-                    content {
-                        id
+            query FindContents {
+                findContents {
+                    count
+                    data {
+                        _id
+                        slug
+                        published
                         title
-                        safeTitle
-                        intro
+                        excerpt
                         body
-                        type
-                        tags
-                        status
+                        image
                         createdAt
+                        createdBy
                         updatedAt
-                        relevance
+                        updatedBy
                     }
                 }
             }
+
             `,
             variables: {
                 featured: true,
             },
         };
 
-        const response = await fetch(`http://localhost:5050/api/private`, {
+        const response = await fetch(`${process.env.WIZE_API_URL}/wize-content/graphql`, {
             method: "POST",
             headers: {
-                "x-api-key": process.env.WIZE_API_KEY || "",
+                "wize-api-key": process.env.WIZE_API_KEY || "",
                 "Content-Type": "application/json",
-                "wize-referrer": process.env.WIZE_TENANT_ID || "",
             },
             body: JSON.stringify(requestBody),
         });
 
         const result = await response.json();
-        console.log("Result:", result.data.contents.content);
+        console.log("Result:", result);
 
         if (result.errors) {
             console.error("Error fetching featured blog posts:", result.errors);
@@ -52,7 +52,11 @@ export const getFeaturedBlogPosts = async () => {
             return BLOG_POSTS.filter(post => post.featured);
         }
 
-        return result.data.contents.content;
+        if (!result.data || !result.data.findContents || !result.data.findContents.data || result.data.findContents.data.length === 0) {
+            console.error("No data found in response:", result);
+            return BLOG_POSTS.filter(post => post.featured);
+        }
+        return result;
     } catch (error) {
         console.error("External API unavailable, using local data:", error);
         // Fallback to local data if fetch fails
