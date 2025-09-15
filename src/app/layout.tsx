@@ -73,7 +73,7 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning data-theme="personal" className={`${coiny.variable} antialiased`}>
             <body className="flex flex-col min-h-screen">
                 {children}
-                <script async src="https://helpninja.app/api/widget?t=hn_pk_7NFfkF5aljVeImKnvfhrqNc5&s=64dd50e3-8d05-43b9-b47f-6a9278721652&k=4ae8af95-4119-4336-ad5b-0fcb195d3af7&voice=casual"></script>
+                <script async src="https://helpninja.app/api/widget?t=hn_pk_7NFfkF5aljVeImKnvfhrqNc5&s=64dd50e3-8d05-43b9-b47f-6a9278721652&k=c7498e50-34e1-475a-b9f6-2ea18cde0f41&voice=casual"></script>
             </body>
         </html>
     );
