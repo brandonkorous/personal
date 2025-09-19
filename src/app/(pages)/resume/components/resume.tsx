@@ -45,23 +45,13 @@ export const ResumePage = () => {
                         <h2 className="text-2xl  text-neutral mb-4">Executive Summary</h2>
                         <div className="max-w-none text-neutral/80">
                             <p>
-                                Strategic and results-driven Technology Executive with 15+ years of leadership experience in
-                                enterprise architecture, cloud transformation, DevOps/DevSecOps, and AI-powered innovation across
-                                insurance, healthcare, legal, and mid-market sectors. Proven ability to align technology strategy with
-                                business objectives, delivering secure, scalable solutions that accelerate time-to-market, enhance
-                                customer experiences, and reduce operational risk.
+                                Strategic Technology Executive and founder with 15+ years leading enterprise architecture, cloud transformation, DevOps/DevSecOps, and AI. Conceived, built, and shipped multi-tenant SaaS platforms (JobSight.co, HelpNinja.ai) that replace 10+ tools with one AI-enhanced suite, accelerating delivery through lean discovery and weekly release cadence.
                             </p>
                             <p>
-                                Trusted cross-functional leader with expertise in architecting hybrid and multi-cloud platforms and
-                                fostering security-first cultures to ensure compliance with HIPAA, PCI DSS, DOJ, NYDFS, and NAIC
-                                standards. Known for driving CI/CD and Infrastructure as Code initiatives, enabling 90% reduction in
-                                deployment effort and RTO/RPO SLAs under 4 hours.
+                                Deep expertise in AI systems (hybrid RAG, semantic search, guardrails, multilingual), secure-by-design cloud architectures (RBAC, audit trails, RLS), and CI/CD with automated environment promotion and rollback. Delivered enterprise-grade reliability targets (99.9% uptime) with real-time sync, observability, and SLO-driven operations.
                             </p>
                             <p>
-                                Collaborative partner to executive leadership and engineering teams, building high-performing
-                                organizations and promoting continuous improvement through initiatives like Hackathons and
-                                Architecture AMA sessions. Proven Track record of expanded AI adoption, including Azure OpenAI
-                                integrations and intelligent self-service solutions.
+                                Proven record aligning technology strategy to business outcomes: 95% AI voice accuracy cutting daily reporting time, 40% faster payments via automated financial workflows, and $45K–$50K+ annual savings through platform consolidation and workflow automation.
                             </p>
                         </div>
                     </section>
@@ -83,7 +73,15 @@ export const ResumePage = () => {
                             </div>
                             <div className="flex items-start">
                                 <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                <span>AI Systems: Hybrid RAG, Semantic Search, Guardrails</span>
+                            </div>
+                            <div className="flex items-start">
+                                <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
                                 <span>Cybersecurity & Regulatory Compliance (HIPAA, PCI DSS, DOJ, NYDFS)</span>
+                            </div>
+                            <div className="flex items-start">
+                                <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                <span>Multi-Tenant SaaS: RBAC, Audit Trails, Row-Level Security</span>
                             </div>
                             <div className="flex items-start">
                                 <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
@@ -99,6 +97,18 @@ export const ResumePage = () => {
                             </div>
                             <div className="flex items-start">
                                 <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                <span>Integration Marketplace & Two-Way Escalation (Slack/Teams/Email)</span>
+                            </div>
+                            <div className="flex items-start">
+                                <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                <span>Executive BI & Automated Financial Workflows</span>
+                            </div>
+                            <div className="flex items-start">
+                                <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                <span>Observability, SLOs & 99.9% Uptime Operations</span>
+                            </div>
+                            <div className="flex items-start">
+                                <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
                                 <span>Vendor & Partner Relationship Management</span>
                             </div>
                         </div>
@@ -107,6 +117,36 @@ export const ResumePage = () => {
                     <section className="mb-12">
                         <h2 className="text-2xl  text-neutral mb-4">Career Highlights</h2>
                         <ul className="space-y-3">
+                            <li className="flex items-start gap-2">
+                                <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                <span>
+                                    Founded and shipped two multi-tenant SaaS platforms (JobSight.co, HelpNinja.ai) replacing 10+ tools with one suite, enabling $45K–$50K+ annual savings for typical customers.
+                                </span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                <span>
+                                    Achieved 95% AI voice accuracy and hybrid RAG search with confidence scoring and guardrails, cutting daily reporting time by up to 80% and improving first-response automation.
+                                </span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                <span>
+                                    Delivered 99.9% uptime targets with real-time sync and conflict resolution; scaled architecture from 10 to 10,000 users with RBAC, audit trails, and RLS.
+                                </span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                <span>
+                                    Drove 40% faster payments via automated financial workflows (AI invoice generation, multi-level approvals, complex billing) and executive BI for margin/variance tracking.
+                                </span>
+                            </li>
+                            <li className="flex items-start gap-2">
+                                <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                <span>
+                                    Launched an integration marketplace with Slack, Microsoft Teams, Email, Discord, and webhooks, featuring visual setup wizards, delivery analytics, and automatic retry.
+                                </span>
+                            </li>
                             <li className="flex items-start gap-2">
                                 <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
                                 <span>
@@ -174,6 +214,155 @@ export const ResumePage = () => {
                     <section className="mb-12">
                         <h2 className="text-2xl  text-neutral mb-6">Professional Experience</h2>
 
+                        {/* JobSight */}
+                        <div className="mb-10">
+                            <div className="flex flex-row justify-between items-start md:items-center mb-3">
+                                <div>
+                                    <h5 className="text-xl  text-neutral">Entrepreneurial & Technical Ventures</h5>
+                                    <p className="text-lg text-neutral/80">Founder & CEO — JobSight Technologies Inc. — Visalia, CA (Remote)</p>
+                                </div>
+                                <div className="badge badge-secondary mt-2 md:mt-0 text-nowrap font-bold">
+                                    February 2025 – Present
+                                </div>
+                            </div>
+                            <div className="space-y-6">
+                                <div>
+                                    <h5 className="text-lg  text-secondary mb-2">Company Overview</h5>
+                                    <p>
+                                        Founded JobSight Technologies Inc.; conceived, designed, and shipped two production-ready SaaS platforms —
+                                        <strong> JobSight.co</strong> (construction & field service management) and <strong>HelpNinja.ai</strong> (AI support assistant) —
+                                        operating as a solo founder with an agile, weekly release cadence.
+                                    </p>
+
+                                </div>
+                                <div>
+                                    <h5 className="text-lg  text-secondary mb-2">Team Transformation & Agile Delivery</h5>
+                                    <ul className="space-y-2">
+                                        <li className="flex items-start gap-2">
+                                            <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                            <span>
+                                                Established a reusable design system with DaisyUI/TailwindCSS to keep UX consistent across brands and accelerate feature delivery.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                            <span>
+                                                Drove lean product discovery and roadmap execution (PRDs, backlog hygiene, tight scoping) to move from prototype → MVP → GA efficiently.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                            <span>
+                                                Positioned platform to replace 10+ point solutions with single AI-enhanced suite; built ROI calculator, demo funnels, and case studies to drive conversion.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                            <span>
+                                                Framed value metrics used in marketing: 95% AI voice accuracy, 40% faster payments, and $45K–$50K+/yr savings based on typical implementations.
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h5 className="text-lg  text-secondary mb-2">DevOps, CI/CD & Integration Excellence</h5>
+                                    <ul className="space-y-2">
+                                        <li className="flex items-start gap-2">
+                                            <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                            <span>
+                                                Architected cloud-native, multi-tenant apps on Next.js, TypeScript, and Node.js, containerized and deployed with automated pipelines.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                            <span>
+                                                Implemented CI/CD with GitHub Actions (OIDC), environment promotion and rollback strategies; added observability (structured logging/alerts and error tracking).
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                            <span>
+                                                Built an AI stack with OpenAI and Claude: RAG (retrieval-augmented generation), semantic search, prompt orchestration, fallback/guardrails, and internal copilot features.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                            <span>
+                                                Designed secure secrets/config practices and standardized operational runbooks for reliable releases.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                            <span>
+                                                Delivered enterprise-grade reliability: 99.9% uptime target, real-time sync with conflict resolution, and horizontal scale from 10 to 10,000 users.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                            <span>
+                                                Implemented bank-level security controls: RBAC, audit trails, encrypted credentials, and multi-tenant data isolation (RLS); SOC2/HIPAA-ready posture.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                            <span>
+                                                Shipped hybrid RAG: OpenAI embeddings + lexical search, confidence scoring, multilingual support, and guardrails with human fallback.
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h5 className="text-lg  text-secondary mb-2">Leadership & Cross-Functional Collaboration</h5>
+                                    <ul className="space-y-2">
+                                        <li className="flex items-start gap-2">
+                                            <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                            <span>
+                                                Led brand, product, and early go-to-market — website content, campaigns, and outreach; user acquisition is in progress as marketing ramps.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                            <span>
+                                                Authored key operational docs (Privacy Policy, Terms), configured domains/DNS and email deliverability (DMARC/SPF/DKIM), and set up support/feedback loops.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                            <span>
+                                                Defined integration architecture (e.g., Slack/Teams escalation and embeddable web widget) with a two-way messaging pattern planned.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                            <span>
+                                                Launched an integration marketplace with visual setup wizards and health monitoring; supported Slack, Teams, Email, Discord, and custom webhooks.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                            <span>
+                                                Built ingestion/knowledge pipeline: URLs, sitemaps, PDFs; semantic chunking; automatic embeddings; source citation and deduplication for accuracy.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                            <span>
+                                                Delivered analytics suites: executive KPIs and profit margin analysis for JobSight; support KPIs, sentiment, and workload analytics for HelpNinja.
+                                            </span>
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
+                                            <span>
+                                                Added enterprise PM and ops features: critical path scheduling, weather-aware timelines, asset lifecycle with QR/GPS, predictive maintenance.
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
                         {/* Job 1 */}
                         <div className="mb-10">
                             <div className="flex flex-row justify-between items-start md:items-center mb-3">
@@ -182,7 +371,7 @@ export const ResumePage = () => {
                                     <p className="text-lg text-neutral/80">Berkshire Hathaway Homestate Companies – Sacramento, CA</p>
                                 </div>
                                 <div className="badge badge-secondary mt-2 md:mt-0 text-nowrap font-bold">
-                                    August 2023 – Present
+                                    August 2023 – February 2025
                                 </div>
                             </div>
 
@@ -665,43 +854,43 @@ export const ResumePage = () => {
                         <div className="grid grid-cols-2 gap-4">
                             <div>
                                 <h5 className="text-lg text-secondary">Cloud Platforms</h5>
-                                <p>Azure, AWS, DigitalOcean, Cloudflare, Salesforce, Snowflake, Linode, Wasabi, HPE GreenLake, Heroku, </p>
+                                <p>Azure, AWS, GCP, DigitalOcean, Cloudflare, Salesforce, Snowflake, Linode, Wasabi, HPE GreenLake, Heroku</p>
                             </div>
                             <div>
                                 <h5 className="text-lg text-secondary">DevOps & CI/CD</h5>
-                                <p>Azure DevOps, GitHub Actions, Jenkins, Terraform, PowerShell, Python, YAML</p>
+                                <p>Azure DevOps, GitHub Actions (OIDC), Jenkins, Terraform, Docker, Kubernetes, PowerShell, Python, YAML</p>
                             </div>
                             <div>
                                 <h5 className="text-lg text-secondary">Application Development</h5>
-                                <p>.Net, C#, JavaScript, Python, WinForms, NextJS, React, Express, NodeJS, C++, Java, Objective-C, Swift, GraphQL, REST, SOAP</p>
+                                <p>.Net, C#, JavaScript/TypeScript, Python, WinForms, Next.js, React, Express, Node.js, C++, Java, Objective-C, Swift, GraphQL, REST, SOAP</p>
                             </div>
                             <div>
                                 <h5 className="text-lg text-secondary">Design</h5>
-                                <p>Bootstrap, DaisyUI, TailwindCSS, MaterialUI, SCSS, FontAwesome, Lucid, ChartJS, </p>
+                                <p>Bootstrap, DaisyUI, Tailwind CSS, Material UI, SCSS, Font Awesome, Lucid, Chart.js</p>
                             </div>
                             <div>
                                 <h5 className="text-lg text-secondary">AI & Automation</h5>
-                                <p>OpenAI, Azure OpenAI, Azure Cognitive Services, Anthropic, Google AI, Grok AI, Claude AI, Intelligent Process Automation, Zapier, N8N, Power Automate, Make</p>
+                                <p>OpenAI, Azure OpenAI, Anthropic/Claude, Azure Cognitive Services; RAG pipelines, embeddings, semantic search, prompt orchestration, guardrails; Zapier, n8n, Power Automate, Make</p>
                             </div>
                             <div>
                                 <h5 className="text-lg text-secondary">Security & Compliance</h5>
-                                <p>OAuth2, JWT, Zero Trust Architecture, DevSecOps, MFA, HIPAA, PCI DSS, DOJ, NYDFS, CCPA, GDPR</p>
+                                <p>OAuth2, JWT, Zero Trust Architecture, DevSecOps, MFA; RBAC, audit trails, Row-Level Security; SOC 2-ready, HIPAA, PCI DSS, DOJ, NYDFS, CCPA, GDPR</p>
                             </div>
                             <div>
                                 <h5 className="text-lg text-secondary">Data & Analytics</h5>
-                                <p>SQL Server, Snowflake, MySQL, PostgreSQL, SSRS, PowerBI, Supabase </p>
+                                <p>PostgreSQL (pgvector, full-text search), SQL Server, Snowflake, MySQL; SSRS, Power BI, Supabase</p>
                             </div>
                             <div>
                                 <h5 className="text-lg text-secondary">Monitoring & Observability</h5>
-                                <p>Splunk, Dynatrace, Graphana, Azure Monitor, Snyk, LogRocket, Sentry, Solarwinds, Clarity</p>
+                                <p>Splunk, Dynatrace, Grafana, Azure Monitor, Snyk, Sentry, LogRocket, SolarWinds, Microsoft Clarity</p>
                             </div>
                             <div>
                                 <h5 className="text-lg text-secondary">Collaboration Tools</h5>
-                                <p>Microsoft Teams, Salesforce, Zoom, Slack, GSuite, Figma, Miro, monday.com, notion, and more.</p>
+                                <p>Microsoft Teams, Slack, Email, Discord, Salesforce, Zoom, Google Workspace, Figma, Miro, monday.com, Notion</p>
                             </div>
                             <div>
                                 <h5 className="text-lg text-secondary">Project & Process Frameworks</h5>
-                                <p>Agile, Scrum, Kanban, Lean, Six Sigma, Critical, Architecture Review Boards, Hackathons, Compliance</p>
+                                <p>Agile, Scrum, Kanban, Lean, Six Sigma; Architecture Review Boards, SLOs/SLIs, Compliance</p>
                             </div>
                         </div>
                     </section>
@@ -709,8 +898,9 @@ export const ResumePage = () => {
                     <section className="mb-12">
                         <h2 className="text-2xl text-neutral mb-4">Education</h2>
                         <h5 className="text-lg text-secondary">
-                            Bachelor of Science in Management Information Systems & Business Administration
+                            Bachelor of Science in Management Information Systems
                         </h5>
+                        <p><span className="font-bold">Emphasis:</span> Computer Science, Mathematics, Business Administration</p>
                         <p className="text-neutral/80">Utah State University – Logan, UT</p>
                     </section>
 

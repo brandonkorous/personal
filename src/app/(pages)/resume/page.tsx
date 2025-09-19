@@ -1,11 +1,14 @@
 "use client";
 import ResumeClientPage from "./components/resume"
+import EngineerResumePage from "./components/resume-engineer"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { faCalendar, faDownload, faMessage } from "@fortawesome/pro-solid-svg-icons";
 
 
 export default function ResumePage() {
+    const params = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
+    const type = params.get('type') || 'manager';
     const handleDownloadPDF = async () => {
         try {
             const response = await fetch('/api/resume/download', {
@@ -13,6 +16,7 @@ export default function ResumePage() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
+                body: JSON.stringify({ type }),
             });
 
             if (!response.ok) {
@@ -43,11 +47,11 @@ export default function ResumePage() {
                     <FontAwesomeIcon icon={faDownload} className="mr-2" fixedWidth />
                     Download PDF
                 </button>
-                <Link className="btn btn-secondary btn-outline" href={"/printables/resume"}>
+                <Link className="btn btn-secondary btn-outline" href={`/printables/resume?type=${type}`}>
                     Print Resume
                 </Link>
             </div>
-            <ResumeClientPage />
+            {type === 'engineer' ? <EngineerResumePage /> : <ResumeClientPage />}
 
             <section className="bg-secondary py-16">
                 <div className="container max-w-6xl">
