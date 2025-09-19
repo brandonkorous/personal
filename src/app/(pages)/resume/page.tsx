@@ -43,10 +43,10 @@ export default function ResumePage() {
     return (
         <div className="bg-white">
             <div className="max-w-5xl mx-auto flex flex-col sm:flex-row gap-3 justify-end p-4">
-                <button className="btn btn-primary" onClick={handleDownloadPDF}>
+                {/* <button className="btn btn-primary" onClick={handleDownloadPDF}>
                     <FontAwesomeIcon icon={faDownload} className="mr-2" fixedWidth />
                     Download PDF
-                </button>
+                </button> */}
                 <Link className="btn btn-secondary btn-outline" href={`/printables/resume?type=${type}`}>
                     Print Resume
                 </Link>
