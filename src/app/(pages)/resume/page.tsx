@@ -3,43 +3,43 @@ import ResumeClientPage from "./components/resume"
 import EngineerResumePage from "./components/resume-engineer"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import { faCalendar, faDownload, faMessage } from "@fortawesome/pro-solid-svg-icons";
+import { faCalendar, faMessage } from "@fortawesome/pro-solid-svg-icons";
 
 
 export default function ResumePage() {
     const params = new URLSearchParams(typeof window !== 'undefined' ? window.location.search : '');
     const type = params.get('type') || 'manager';
-    const handleDownloadPDF = async () => {
-        try {
-            const response = await fetch('/api/resume/download', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ type }),
-            });
+    // const handleDownloadPDF = async () => {
+    //     try {
+    //         const response = await fetch('/api/resume/download', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify({ type }),
+    //         });
 
-            if (!response.ok) {
-                throw new Error('Failed to generate PDF');
-            }
+    //         if (!response.ok) {
+    //             throw new Error('Failed to generate PDF');
+    //         }
 
-            // Create blob from response
-            const blob = await response.blob();
+    //         // Create blob from response
+    //         const blob = await response.blob();
 
-            // Create download link
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'Brandon_Korous_Resume.pdf';
-            document.body.appendChild(a);
-            a.click();
-            window.URL.revokeObjectURL(url);
-            document.body.removeChild(a);
-        } catch (error) {
-            console.error('Error downloading PDF:', error);
-            alert('Failed to download PDF. Please try again.');
-        }
-    };
+    //         // Create download link
+    //         const url = window.URL.createObjectURL(blob);
+    //         const a = document.createElement('a');
+    //         a.href = url;
+    //         a.download = 'Brandon_Korous_Resume.pdf';
+    //         document.body.appendChild(a);
+    //         a.click();
+    //         window.URL.revokeObjectURL(url);
+    //         document.body.removeChild(a);
+    //     } catch (error) {
+    //         console.error('Error downloading PDF:', error);
+    //         alert('Failed to download PDF. Please try again.');
+    //     }
+    // };
     return (
         <div className="bg-white">
             <div className="max-w-5xl mx-auto flex flex-col sm:flex-row gap-3 justify-end p-4">
