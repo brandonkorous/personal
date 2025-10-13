@@ -120,7 +120,7 @@ export const ResumePage = () => {
                             <li className="flex items-start gap-2">
                                 <div className="h-2 w-2 rounded-full bg-primary mt-2 mr-2 flex-shrink-0"></div>
                                 <span>
-                                    Founded and shipped two multi-tenant SaaS platforms (JobSight.co, HelpNinja.ai) replacing 10+ tools with one suite, enabling $45K–$50K+ annual savings for typical customers.
+                                    Founded and shipped two multi-tenant SaaS platforms (JobSight.co, helpNINJA.ai) replacing 10+ tools with one suite, enabling $45K–$50K+ annual savings for typical customers.
                                 </span>
                             </li>
                             <li className="flex items-start gap-2">
@@ -229,8 +229,8 @@ export const ResumePage = () => {
                                 <div>
                                     <h5 className="text-lg  text-secondary mb-2">Company Overview</h5>
                                     <p>
-                                        Founded JobSight Technologies Inc.; conceived, designed, and shipped two production-ready SaaS platforms —
-                                        <strong> JobSight.co</strong> (construction & field service management) and <strong>HelpNinja.ai</strong> (AI support assistant) —
+                                        Founded JobSight Technologies Inc.; conceived, designed, and shipped three production-ready SaaS platforms —
+                                        <strong> JobSight.co</strong> (construction & field service management), <strong>helpNINJA.ai</strong> (AI support assistant) and <strong>stumbleable.com</strong> (internet discovery) —
                                         operating as a solo founder with an agile, weekly release cadence.
                                     </p>
 
