@@ -8,6 +8,9 @@ import { Metadata } from 'next';
 import { Reveal } from '@/components/animation/reveal';
 import { ParallaxSection } from '@/components/animation/parallax-section';
 import { StumbleableContent } from './components/stumbleable-content';
+import { HelpNinjaContent } from './components/helpninja-content';
+import { JobSightContent } from './components/jobsight-content';
+import { JobSightTechnologiesContent } from './components/jobsight-technologies-content';
 
 export async function generateStaticParams() {
     return PROJECTS.map((project) => ({
@@ -132,6 +135,30 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 <section className="py-16 bg-white">
                     <div className="container">
                         <StumbleableContent />
+                    </div>
+                </section>
+            )}
+
+            {project.slug === 'helpninja-ai-support-platform' && (
+                <section className="py-16 bg-white">
+                    <div className="container">
+                        <HelpNinjaContent />
+                    </div>
+                </section>
+            )}
+
+            {project.slug === 'jobsight-construction-platform' && (
+                <section className="py-16 bg-white">
+                    <div className="container">
+                        <JobSightContent />
+                    </div>
+                </section>
+            )}
+
+            {project.slug === 'jobsight-technologies-site' && (
+                <section className="py-16 bg-white">
+                    <div className="container">
+                        <JobSightTechnologiesContent />
                     </div>
                 </section>
             )}
