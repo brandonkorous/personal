@@ -178,10 +178,10 @@ export default function Portfolio() {
                         </div>
 
                         <div className="mt-12 text-center">
-                            <a className="btn btn-secondary btn-lg rounded-full" href="/portfolio">
+                            <Link className="btn btn-secondary btn-lg rounded-full" href="/portfolio">
                                 Load More Projects
                                 <FontAwesomeIcon icon={faArrowRight} className="ml-2" />
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </section>
