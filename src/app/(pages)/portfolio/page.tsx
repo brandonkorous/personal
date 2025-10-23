@@ -100,6 +100,13 @@ export default function Portfolio() {
                                     </div>
                                     <div className="flex gap-4 flex-wrap">
                                         <Link
+                                            href={`/portfolio/${project.slug}`}
+                                            className="btn btn-secondary btn-sm rounded-full"
+                                        >
+                                            View Details
+                                            <FontAwesomeIcon icon={faArrowRight} className="ml-1 h-4 w-4" />
+                                        </Link>
+                                        <Link
                                             href={project.url || '#'}
                                             target="_blank"
                                             className="btn btn-primary btn-sm rounded-full"
@@ -148,14 +155,23 @@ export default function Portfolio() {
                                                 <span key={tech} className="badge badge-outline">{tech}</span>
                                             ))}
                                         </div>
-                                        <Link
-                                            href={project.url || '#'}
-                                            target="_blank"
-                                            className="inline-flex items-center text-primary font-medium hover:underline"
-                                        >
-                                            Visit Site
-                                            <FontAwesomeIcon icon={faArrowRight} className="ml-1 h-4 w-4" />
-                                        </Link>
+                                        <div className="flex gap-4">
+                                            <Link
+                                                href={`/portfolio/${project.slug}`}
+                                                className="inline-flex items-center text-secondary font-medium hover:underline"
+                                            >
+                                                View Details
+                                                <FontAwesomeIcon icon={faArrowRight} className="ml-1 h-4 w-4" />
+                                            </Link>
+                                            <Link
+                                                href={project.url || '#'}
+                                                target="_blank"
+                                                className="inline-flex items-center text-primary font-medium hover:underline"
+                                            >
+                                                Visit Site
+                                                <FontAwesomeIcon icon={faArrowRight} className="ml-1 h-4 w-4" />
+                                            </Link>
+                                        </div>
                                     </Reveal>
                                 </article>
                             ))}

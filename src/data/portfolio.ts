@@ -2,6 +2,19 @@ export const PROJECTS = [
     {
         id: 1,
         featured: true,
+        title: 'Stumbleable – Modern Web Discovery Platform',
+        description: 'Algorithm-free content discovery platform bringing back the joy of internet exploration. One-click serendipity with wildness control, community curation, and instant reactions—rediscover the magic of stumbling upon amazing content.',
+        category: 'Consumer Web',
+        image: '/images/portfolio/stumbleable-home.png',
+        slug: 'stumbleable-web-discovery',
+        url: 'https://stumbleable.com',
+        metrics: ['One-click discovery', 'Community curation', 'Algorithm-free', 'Lightning fast UX'],
+        role: 'Full-stack engineering, product design, community features',
+        stack: ['Next.js', 'TypeScript', 'Real-time reactions', 'Content curation', 'Tailwind'],
+    },
+    {
+        id: 2,
+        featured: true,
         title: 'helpNINJA – AI Customer Support Platform',
         description: 'AI-powered support platform that reduces resolution time by 80%, achieves 98% first-contact resolution, and enables <15 minute deployment with white‑label capability and 50+ integrations.',
         category: 'AI / SaaS',
@@ -13,7 +26,7 @@ export const PROJECTS = [
         stack: ['Next.js', 'TypeScript', 'Edge Functions', 'AI/LLM', 'PostgreSQL', 'Vector Search', 'Tailwind'],
     },
     {
-        id: 2,
+        id: 3,
         featured: false,
         title: 'kanNINJA – AI Recruitment & Talent Platform',
         description: 'Intelligent hiring platform delivering AI candidate matching, workflow automation, analytics and collaboration to shrink time‑to‑hire and raise talent quality.',
@@ -26,7 +39,7 @@ export const PROJECTS = [
         stack: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'AI Matching', 'Tailwind'],
     },
     {
-        id: 3,
+        id: 4,
         featured: false,
         title: 'JobSight Pro – Construction Intelligence',
         description: 'Enterprise-grade construction management replacing 10+ disparate tools with AI voice logs (95% accuracy), financial automation, BI dashboards & predictive analytics.',
@@ -39,7 +52,7 @@ export const PROJECTS = [
         stack: ['Next.js', 'TypeScript', 'Node.js', 'AI/LLM', 'Analytics', 'Cloud Infrastructure'],
     },
     {
-        id: 4,
+        id: 5,
         featured: false,
         title: 'JobSight Technologies – Multi‑Product Portfolio',
         description: 'Corporate technology umbrella site showcasing product suite (kanNINJA, JobSight) with messaging architecture, product positioning and conversion focused design.',
@@ -52,7 +65,7 @@ export const PROJECTS = [
         stack: ['Next.js', 'TypeScript', 'Static Optimization', 'Tailwind'],
     },
     {
-        id: 5,
+        id: 6,
         featured: false,
         title: 'Gillett Diesel Service – E‑commerce Modernization',
         description: 'Modern diesel parts & service ecommerce ecosystem with multi-brand catalog structure, performance enhancements, customer education content and conversion UX.',
@@ -68,6 +81,7 @@ export const PROJECTS = [
 
 export const CATEGORIES = [
     { name: 'All', slug: 'all' },
+    { name: 'Consumer Web', slug: 'consumer-web' },
     { name: 'AI / SaaS', slug: 'ai-saas' },
     { name: 'AI / HR Tech', slug: 'ai-hr-tech' },
     { name: 'Enterprise SaaS', slug: 'enterprise-saas' },
