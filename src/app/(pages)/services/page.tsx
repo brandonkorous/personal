@@ -4,6 +4,16 @@ import { Reveal } from "@/components/animation/reveal";
 import { faCode, faPlay, faArrowRight, faEnvelope, faRocket, faChartLine } from "@awesome.me/kit-654a0ecbfd/icons/classic/solid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Services | Brandon Korous",
+    description: "Tailored technology solutions designed to help your organization reach its full potential. Web development, digital strategy, and business optimization.",
+    keywords: ["web development services", "digital strategy", "business automation", "custom software development", "technology consulting"],
+    alternates: {
+        canonical: "https://brandonkorous.com/services",
+    },
+};
 
 const ServicesPage = () => {
     return (

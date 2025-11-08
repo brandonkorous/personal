@@ -6,6 +6,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { TIME_LINE_ITEMS } from "@/data/about";
 import Link from "next/link";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "About Brandon Korous | Tech Expert & Innovation Leader",
+    description: "Tech enthusiast, creative thinker, and automation expert with a passion for helping brands stand out in today's digital landscape.",
+    keywords: ["Brandon Korous", "full stack developer", "technology consultant", "web development expert", "automation specialist"],
+    alternates: {
+        canonical: "https://brandonkorous.com/about",
+    },
+};
 
 const AboutPage = () => {
     return (

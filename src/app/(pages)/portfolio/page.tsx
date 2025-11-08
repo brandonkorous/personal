@@ -12,6 +12,9 @@ import Testimonial from '@/components/testimonial';
 export const metadata: Metadata = {
     title: 'Portfolio | Brandon Korous',
     description: 'Select product, platform, and modernization work: AI SaaS, recruitment tech, construction intelligence, e-commerce, and brand platform builds.',
+    alternates: {
+        canonical: "https://brandonkorous.com/portfolio",
+    },
 };
 
 export default function Portfolio() {

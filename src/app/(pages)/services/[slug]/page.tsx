@@ -18,6 +18,9 @@ export async function generateMetadata({ params }: { params: Promise<RouteParams
         title: `${service.title} | Services`,
         description: service.short,
         keywords: service.keywords,
+        alternates: {
+            canonical: `https://brandonkorous.com/services/${slug}`,
+        },
     }
 }
 

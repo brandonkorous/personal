@@ -9,6 +9,36 @@ import { faPenNib } from "@awesome.me/kit-654a0ecbfd/icons/classic/solid";
 import { getFeaturedBlogPosts } from "./api";
 import FeaturedArticle from "@/components/featured-article";
 import { ArticleBlurb } from "./types";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Blog | Brandon Korous",
+    description: "Insights on Technology, Innovation, and Automation. Practical tips, industry trends, and personal stories to help you build a stronger technological foundation.",
+    keywords: ["technology blog", "web development", "automation", "innovation", "AI", "tech insights", "programming"],
+    openGraph: {
+        title: "Blog | Brandon Korous",
+        description: "Insights on Technology, Innovation, and Automation. Practical tips, industry trends, and personal stories.",
+        type: "website",
+        url: "https://brandonkorous.com/blog",
+        images: [
+            {
+                url: "https://brandonkorous.com/logo.png",
+                width: 800,
+                height: 600,
+                alt: "Brandon Korous Blog",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Blog | Brandon Korous",
+        description: "Insights on Technology, Innovation, and Automation.",
+        images: ["https://brandonkorous.com/logo.png"],
+    },
+    alternates: {
+        canonical: "https://brandonkorous.com/blog",
+    },
+};
 
 const Blog = async () => {
     const featuredPosts = await getFeaturedBlogPosts();

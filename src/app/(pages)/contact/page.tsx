@@ -7,6 +7,36 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import ContactForm from "./components/form";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Contact | Brandon Korous",
+    description: "Let's Connect and Create Something Amazing. Have a project in mind? Get in touch and let's discuss how we can collaborate.",
+    keywords: ["contact Brandon Korous", "hire developer", "web development services", "project inquiry", "consultation"],
+    openGraph: {
+        title: "Contact | Brandon Korous",
+        description: "Let's Connect and Create Something Amazing. Have a project in mind? Get in touch.",
+        type: "website",
+        url: "https://brandonkorous.com/contact",
+        images: [
+            {
+                url: "https://brandonkorous.com/logo.png",
+                width: 800,
+                height: 600,
+                alt: "Contact Brandon Korous",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Contact | Brandon Korous",
+        description: "Let's Connect and Create Something Amazing.",
+        images: ["https://brandonkorous.com/logo.png"],
+    },
+    alternates: {
+        canonical: "https://brandonkorous.com/contact",
+    },
+};
 
 const Contact = () => {
     return (
