@@ -2,15 +2,22 @@
 import { faFacebook, faLinkedin, faTwitter } from "@awesome.me/kit-654a0ecbfd/icons/classic/brands";
 import { faCopy } from "@awesome.me/kit-654a0ecbfd/icons/classic/solid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
 
 interface ShareCardProps {
     title: string;
 }
 
 const ShareCard = ({ title }: ShareCardProps) => {
-    const url = window.location.href;
+    const [url, setUrl] = useState("");
+
+    useEffect(() => {
+        setUrl(window.location.href);
+    }, []);
 
     const handleShare = (platform: string) => {
+        if (!url) return;
+
         switch (platform) {
             case "facebook":
                 window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, "_blank")
