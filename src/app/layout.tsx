@@ -69,8 +69,47 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const personSchema = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Brandon Korous",
+        "url": "https://brandonkorous.com",
+        "image": "https://brandonkorous.com/logo.png",
+        "jobTitle": "Full Stack Developer & Technology Consultant",
+        "description": "Tech expertise, innovation, and automation to help your brand stand out and operate efficiently.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "United States"
+        },
+        "sameAs": [
+            "https://linkedin.com/in/brandonkorous",
+            "https://github.com/brandonkorous",
+            "https://twitter.com/brandonkorous"
+        ],
+        "knowsAbout": [
+            "Web Development",
+            "React",
+            "Next.js",
+            "TypeScript",
+            "Automation",
+            "AI Integration",
+            "Cloud Computing",
+            "DevOps"
+        ],
+        "alumniOf": {
+            "@type": "Organization",
+            "name": "Technology Professional"
+        }
+    };
+
     return (
         <html lang="en" suppressHydrationWarning data-theme="personal" className={`${coiny.variable} antialiased`}>
+            <head>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+                />
+            </head>
             <body className="flex flex-col min-h-screen">
                 {children}
                 <script async src="https://helpninja.app/api/widget?t=hn_pk_7NFfkF5aljVeImKnvfhrqNc5&s=64dd50e3-8d05-43b9-b47f-6a9278721652&k=c7498e50-34e1-475a-b9f6-2ea18cde0f41&voice=casual"></script>

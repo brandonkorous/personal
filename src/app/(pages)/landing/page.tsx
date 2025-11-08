@@ -7,7 +7,36 @@ import Hero from "@/components/hero";
 import IconSwitcher from "@/components/icon-switcher";
 import { IconName } from "@fortawesome/fontawesome-svg-core";
 import Testimonial from "@/components/testimonial";
+import type { Metadata } from "next";
 
+export const metadata: Metadata = {
+    title: "Brandon Korous - Bold Ideas. Creative Solutions.",
+    description: "Tech expertise, innovation, and automation to help your brand stand out and operate efficiently. Trusted by 1000+ customers.",
+    keywords: ["web development", "automation", "innovation", "technology solutions", "AI", "modernization", "Brandon Korous"],
+    openGraph: {
+        title: "Brandon Korous - Bold Ideas. Creative Solutions.",
+        description: "Tech expertise, innovation, and automation to help your brand stand out and operate efficiently.",
+        type: "website",
+        url: "https://brandonkorous.com",
+        images: [
+            {
+                url: "https://brandonkorous.com/logo.png",
+                width: 800,
+                height: 600,
+                alt: "Brandon Korous Logo",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Brandon Korous - Bold Ideas. Creative Solutions.",
+        description: "Tech expertise, innovation, and automation to help your brand stand out and operate efficiently.",
+        images: ["https://brandonkorous.com/logo.png"],
+    },
+    alternates: {
+        canonical: "https://brandonkorous.com",
+    },
+};
 
 export default function LandingPage() {
     const icons = ["code", "face-smile", "network-wired"] as IconName[];

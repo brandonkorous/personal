@@ -2,23 +2,23 @@ import type { MetadataRoute } from 'next'
 import { BLOG_POSTS } from './(pages)/blog/data'
 import { SITE_INFO } from '../data/site'
 import { SERVICES } from '../data/services'
+import { PROJECTS } from '../data/portfolio'
 
 // Helper to build a full URL
 const base = SITE_INFO.Url?.replace(/\/$/, '') || 'https://brandonkorous.com'
 
 // Explicit static routes derived from existing page.tsx files (excluding error, sitemap itself)
 const staticPaths: { path: string; changeFrequency?: MetadataRoute.Sitemap[number]['changeFrequency']; priority?: number }[] = [
-    { path: '/', changeFrequency: 'daily', priority: 1 },
+    { path: '/landing', changeFrequency: 'daily', priority: 1 }, // Main landing page (root redirects here)
     { path: '/about', changeFrequency: 'monthly', priority: 0.8 },
-    { path: '/blog', changeFrequency: 'weekly', priority: 0.6 },
-    { path: '/contact', changeFrequency: 'monthly', priority: 0.6 },
-    { path: '/portfolio', changeFrequency: 'monthly', priority: 0.7 },
-    { path: '/services', changeFrequency: 'monthly', priority: 0.7 },
+    { path: '/blog', changeFrequency: 'weekly', priority: 0.9 },
+    { path: '/contact', changeFrequency: 'monthly', priority: 0.7 },
+    { path: '/portfolio', changeFrequency: 'monthly', priority: 0.8 },
+    { path: '/services', changeFrequency: 'monthly', priority: 0.8 },
     { path: '/resume', changeFrequency: 'monthly', priority: 0.3 },
     { path: '/project-intake', changeFrequency: 'monthly', priority: 0.9 },
     { path: '/privacy', changeFrequency: 'yearly', priority: 0.4 },
     { path: '/terms', changeFrequency: 'yearly', priority: 0.4 },
-    { path: '/landing', changeFrequency: 'yearly', priority: 0.2 },
     { path: '/printables/resume', changeFrequency: 'monthly', priority: 0.2 },
 ]
 
@@ -49,6 +49,13 @@ const sitemap = (): MetadataRoute.Sitemap => {
             lastModified: now,
             changeFrequency: 'monthly' as const,
             priority: 0.5,
+        })),
+        // Individual portfolio project pages
+        ...PROJECTS.map(p => ({
+            url: `${base}/portfolio/${p.slug}`,
+            lastModified: now,
+            changeFrequency: 'monthly' as const,
+            priority: p.featured ? 0.7 : 0.6,
         })),
     ]
 }

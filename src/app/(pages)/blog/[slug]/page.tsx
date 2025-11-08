@@ -43,6 +43,9 @@ export const generateMetadata = async ({ params }: { params: Promise<{ slug: str
             description: post.excerpt,
             images: [post.image],
         },
+        alternates: {
+            canonical: `https://brandonkorous.com/blog/${slug}`,
+        },
     }
 }
 
@@ -56,9 +59,8 @@ export const generateStaticParams = async () => {
     ]
 }
 
-// Disable caching for this page to ensure comments are always fresh
-export const dynamic = "force-dynamic"
-export const revalidate = 0
+// Use ISR (Incremental Static Regeneration) to revalidate every hour
+export const revalidate = 3600
 
 const BlogPostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
     const { slug } = await params;
@@ -73,10 +75,46 @@ const BlogPostPage = async ({ params }: { params: Promise<{ slug: string }> }) =
     // Get related posts
     const relatedPosts = await getRelatedBlogPosts(post.category || "");
 
+    // JSON-LD structured data for the blog post
+    const articleSchema = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "description": post.excerpt,
+        "image": post.image,
+        "datePublished": post.createdAt,
+        "dateModified": post.createdAt,
+        "author": {
+            "@type": "Person",
+            "name": post.author.name,
+            "url": `https://brandonkorous.com/about`
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Brandon Korous",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://brandonkorous.com/logo.png"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": `https://brandonkorous.com/blog/${slug}`
+        },
+        "keywords": post.tags?.join(", ") || "",
+        "articleSection": post.category || "Technology"
+    };
+
     return (
-        <div className="flex flex-col min-h-screen bg-beige">
-            <Article article={post} relatedPosts={relatedPosts} />
-        </div>
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+            />
+            <div className="flex flex-col min-h-screen bg-beige">
+                <Article article={post} relatedPosts={relatedPosts} />
+            </div>
+        </>
     );
 };
 
